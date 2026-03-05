@@ -310,43 +310,60 @@
       }
 
       .footer {
-        margin-top: 60px;
-        padding-top: 20px;
-        border-top: 1px solid var(--line);
+        margin-top: 88px;
+        padding-top: 18px;
+        border-top: none;
         text-align: center;
       }
 
       .footer-meta {
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 1.5;
+        display: flex;
+        justify-content: center;
+      }
+
+      .footer-meta p,
+      .footer-links a {
         margin: 0;
         color: var(--muted);
-        font-size: 13px;
-        line-height: 1.6;
+        font-size: 12px;
+        line-height: 1.5;
+        font-weight: 300;
       }
 
       .footer-meta a {
-        color: inherit;
+        color: var(--ink);
+        text-decoration: underline;
+        text-underline-offset: 0.16em;
+        text-decoration-color: rgba(31, 109, 255, 0.45);
       }
 
-      .footer-separator {
-        margin: 0 8px;
-        color: var(--line-strong);
+      .footer-meta a:hover,
+      .footer-meta a:focus-visible,
+      .footer-links a:hover,
+      .footer-links a:focus-visible {
+        color: var(--ink);
       }
 
       .footer-links {
         display: flex;
         flex-wrap: wrap;
+        gap: 14px;
+        align-items: center;
         justify-content: center;
-        gap: 12px 18px;
-        margin-top: 8px;
+        margin-top: 10px;
       }
 
       .footer-links a {
         color: var(--ink);
-        font-size: 13px;
+        font-size: 12px;
         line-height: 1.4;
         text-decoration: underline;
         text-underline-offset: 0.16em;
         text-decoration-color: rgba(31, 109, 255, 0.45);
+        transition: color 0.2s ease;
       }
 
       @media (max-width: 700px) {
@@ -382,13 +399,6 @@
           font-size: 22px;
         }
 
-        .footer-meta {
-          font-size: 12px;
-        }
-
-        .footer-separator {
-          margin: 0 6px;
-        }
       }
     </style>
   </head>
@@ -428,7 +438,7 @@
 
         <h2>Feedback and Support</h2>
         <p>We welcome accessibility feedback, bug reports, and requests for help.</p>
-        <p>Email us at <a href="mailto:&#109;&#97;&#105;&#108;&#109;&#111;&#105;&#64;&#110;&#105;&#101;&#100;&#101;&#114;&#46;&#109;&#101;">&#109;&#97;&#105;&#108;&#109;&#111;&#105;&#64;&#110;&#105;&#101;&#100;&#101;&#114;&#46;&#109;&#101;</a> with:</p>
+        <p>Email us at <a href="mailto:&#104;&#101;&#108;&#112;&#64;&#109;&#97;&#105;&#108;&#46;&#109;&#111;&#105;">&#104;&#101;&#108;&#112;&#64;&#109;&#97;&#105;&#108;&#46;&#109;&#111;&#105;</a> with:</p>
         <ul>
           <li>what you were trying to do,</li>
           <li>what device, OS, and browser or app version you were using, and</li>
@@ -440,22 +450,25 @@
 
 
         <h2>Contact</h2>
-        <p>For accessibility questions, contact <a href="mailto:&#109;&#97;&#105;&#108;&#109;&#111;&#105;&#64;&#110;&#105;&#101;&#100;&#101;&#114;&#46;&#109;&#101;">&#109;&#97;&#105;&#108;&#109;&#111;&#105;&#64;&#110;&#105;&#101;&#100;&#101;&#114;&#46;&#109;&#101;</a>.</p>
+        <p>For accessibility questions, contact <a href="mailto:&#104;&#101;&#108;&#112;&#64;&#109;&#97;&#105;&#108;&#46;&#109;&#111;&#105;">&#104;&#101;&#108;&#112;&#64;&#109;&#97;&#105;&#108;&#46;&#109;&#111;&#105;</a></p>
 
-        <footer class="footer">
-          <p class="footer-meta">
-            <a href="https://nieder.me/">&copy; John Niedermeyer</a>
-            <span class="footer-separator">|</span>
-            Need help? Email <a href="mailto:&#109;&#97;&#105;&#108;&#109;&#111;&#105;&#64;&#110;&#105;&#101;&#100;&#101;&#114;&#46;&#109;&#101;">&#109;&#97;&#105;&#108;&#109;&#111;&#105;&#64;&#110;&#105;&#101;&#100;&#101;&#114;&#46;&#109;&#101;</a>.
-          </p>
-          <div class="footer-links">
-            <a href="/">SendMoi</a>
-            <a href="/privacy/">Privacy Policy</a>
-            <a href="/terms/">Terms of Service</a>
-            <a href="/accessibility/">Accessibility</a>
-          </div>
-        </footer>
       </section>
+
+      <footer class="footer">
+        <div class="footer-meta">
+          <p>
+            <a href="https://nieder.me/">&copy; John Niedermeyer</a>
+            <span aria-hidden="true"> | </span>
+            Need help? Email
+            <a href="mailto:&#104;&#101;&#108;&#112;&#64;&#109;&#97;&#105;&#108;&#46;&#109;&#111;&#105;">&#104;&#101;&#108;&#112;&#64;&#109;&#97;&#105;&#108;&#46;&#109;&#111;&#105;</a>
+          </p>
+        </div>
+        <div class="footer-links">
+          <a href="/privacy/">Privacy Policy</a>
+          <a href="/terms/">Terms of Service</a>
+          <a href="/accessibility/">Accessibility</a>
+        </div>
+      </footer>
     </main>
 
     <script>

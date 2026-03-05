@@ -2,6 +2,17 @@
 
 Marketing site for SendMoi.
 
+## Routes
+
+- `/` marketing landing page
+- `/privacy/` privacy policy
+- `/terms/` terms of service
+- `/accessibility/` accessibility statement
+
+## Support contact
+
+- Footer and policy pages use `help@mail.moi`
+
 ## Local dev
 
 Run this from the repo root:

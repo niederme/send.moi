@@ -1126,6 +1126,7 @@
                     class="video-player"
                     src="./assets/videos/sendmoi/sendmoi-demo-hero.mp4"
                     muted
+                    loop
                     playsinline
                     preload="auto"
                     aria-label="SendMoi product demo video. Tap to play or pause."
@@ -1294,7 +1295,7 @@
             <a href="https://nieder.me/">&copy; John Niedermeyer</a>
             <span aria-hidden="true"> | </span>
             Need help? Email
-            <a href="mailto:&#109;&#97;&#105;&#108;&#109;&#111;&#105;&#64;&#110;&#105;&#101;&#100;&#101;&#114;&#46;&#109;&#101;">&#109;&#97;&#105;&#108;&#109;&#111;&#105;&#64;&#110;&#105;&#101;&#100;&#101;&#114;&#46;&#109;&#101;</a>.
+            <a href="mailto:&#104;&#101;&#108;&#112;&#64;&#109;&#97;&#105;&#108;&#46;&#109;&#111;&#105;">&#104;&#101;&#108;&#112;&#64;&#109;&#97;&#105;&#108;&#46;&#109;&#111;&#105;</a>
           </p>
         </div>
         <div class="footer-links">
@@ -1315,7 +1316,6 @@
         const darkQuery = window.matchMedia("(prefers-color-scheme: dark)");
         const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
         const demoVideo = document.querySelector("[data-demo-video]");
-        let demoRestartTimer = null;
         let reducedMotion = motionQuery.matches;
 
         function systemTheme() {
@@ -1385,10 +1385,6 @@
 
         if (demoVideo) {
           const demoFrame = demoVideo.closest(".video-frame");
-          const clearDemoRestart = () => {
-            window.clearTimeout(demoRestartTimer);
-          };
-
           const syncPausedState = () => {
             demoVideo.classList.toggle("is-paused", demoVideo.paused);
             if (demoFrame) {
@@ -1404,32 +1400,16 @@
             }
           };
 
-          const restartDemo = () => {
-            if (reducedMotion || demoVideo.paused) {
-              return;
-            }
-
-            clearDemoRestart();
-            demoRestartTimer = window.setTimeout(() => {
-              demoVideo.currentTime = 0;
-              playDemo();
-            }, 5000);
-          };
-
           const toggleDemoPlayback = () => {
             if (demoVideo.paused) {
               playDemo();
               return;
             }
 
-            clearDemoRestart();
             demoVideo.pause();
           };
 
-          demoVideo.addEventListener("play", () => {
-            clearDemoRestart();
-            syncPausedState();
-          });
+          demoVideo.addEventListener("play", syncPausedState);
 
           demoVideo.addEventListener("pause", syncPausedState);
 
@@ -1443,8 +1423,6 @@
             toggleDemoPlayback();
           });
 
-          demoVideo.addEventListener("ended", restartDemo);
-
           if (!reducedMotion) {
             playDemo();
           }
@@ -1455,7 +1433,9 @@
             reducedMotion = event.matches;
 
             if (reducedMotion) {
-              clearDemoRestart();
+              if (!demoVideo.paused) {
+                demoVideo.pause();
+              }
               return;
             }
 

@@ -60,3 +60,30 @@ make dev-local
 ```
 
 That binds to localhost only.
+
+## Deploy
+
+Run:
+
+```bash
+./scripts/deploy.sh
+```
+
+Preview only (no remote changes):
+
+```bash
+DRY_RUN=1 ./scripts/deploy.sh
+```
+
+Defaults mirror the `nieder.me` deploy host/user and deploy to:
+- `DEPLOY_HOST=suckahs.org`
+- `DEPLOY_USER=suckahs`
+- `DEPLOY_PATH=/home/suckahs/public_html/sendmoi`
+- `DEPLOY_PORT=22`
+- `SITE_URL=https://send.moi`
+
+Override as needed, for example:
+
+```bash
+DEPLOY_PATH=/home/suckahs/public_html/custom-sendmoi ./scripts/deploy.sh
+```

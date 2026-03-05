@@ -11,6 +11,7 @@ Last updated: March 5, 2026
 - Standalone `send.moi` marketing site migration from `nieder.me/sendmoi`
 - Consistent local dev workflow (`make`, `make dev-live`, `.local` + LAN URLs)
 - Footer and support-contact consistency across all pages
+- Production deploy workflow for standalone `send.moi`
 
 ## What changed
 
@@ -32,13 +33,19 @@ Last updated: March 5, 2026
   - canonical/OG/twitter URLs now use `https://send.moi`
   - legal links now route to `/privacy/`, `/terms/`, `/accessibility/`
 - Updated app icon references with cache busting:
-  - `app-icon.png?v=20260305-2`
+  - `app-icon.png?v=20260305-3`
 - Updated support email references:
   - `help@mail.moi`
 - Footer refinements:
   - child-page footer moved outside the content card
   - child-page footer spacing and link styling aligned with homepage
   - child pages now omit the top divider line above footer
+- Added deploy scripts (based on `nieder.me` deploy flow, production-only):
+  - `scripts/deploy.sh`
+  - `scripts/set-site-url.sh`
+  - defaults: `suckahs.org` / `suckahs` / `/home/suckahs/public_html/sendmoi`
+  - supports `DRY_RUN=1` preview mode
+  - auto-updates canonical/social URLs and bumps `app-icon.png?v=YYYYMMDD-N`
 
 ## Open items
 
@@ -53,6 +60,10 @@ Last updated: March 5, 2026
   - `make dev-live`
 - Localhost only:
   - `make dev-local`
+- Deploy:
+  - `./scripts/deploy.sh`
+- Deploy preview (no remote writes):
+  - `DRY_RUN=1 ./scripts/deploy.sh`
 
 ## Resume checklist
 
@@ -61,3 +72,4 @@ Last updated: March 5, 2026
 3. `git pull --ff-only`
 4. `make`
 5. Validate `/`, `/privacy/`, `/terms/`, `/accessibility/` in browser
+6. Run `DRY_RUN=1 ./scripts/deploy.sh` before production deploys

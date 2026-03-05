@@ -128,4 +128,5 @@ dev-live:
 	echo "Live reload on this Mac: http://$$LOCAL_URL_HOST:$$PORT_TO_USE"; \
 	echo "Live reload on your network: http://$$LAN_IP:$$PORT_TO_USE"; \
 	echo "(Ctrl+C to stop)"; \
-	npx browser-sync start --server . --files '**/*.html,**/*.css,**/*.js' --host $(BIND) --port $$PORT_TO_USE
+	(sleep 0.8; open "http://$$LOCAL_URL_HOST:$$PORT_TO_USE/") >/dev/null 2>&1 & \
+	npx browser-sync start --server . --files '**/*.html,**/*.css,**/*.js' --host $$LOCAL_URL_HOST --port $$PORT_TO_USE --no-open

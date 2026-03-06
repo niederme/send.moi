@@ -13,6 +13,10 @@ Marketing site for SendMoi.
 
 - Footer and policy pages use `help@mail.moi`
 
+## UI notes
+
+- On narrow mobile viewports, the `Coming soon` App Store annotation is constrained to the card edge to avoid horizontal side-scroll.
+
 ## Local dev
 
 Run this from the repo root:

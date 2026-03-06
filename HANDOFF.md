@@ -33,13 +33,16 @@ Last updated: March 5, 2026
   - canonical/OG/twitter URLs now use `https://send.moi`
   - legal links now route to `/privacy/`, `/terms/`, `/accessibility/`
 - Updated app icon references with cache busting:
-  - `app-icon.png?v=20260305-3`
+  - `app-icon.png?v=20260305-4`
 - Updated support email references:
   - `help@mail.moi`
 - Footer refinements:
   - child-page footer moved outside the content card
   - child-page footer spacing and link styling aligned with homepage
   - child pages now omit the top divider line above footer
+  - child-page hero icon/title stay side-by-side on mobile and preserve `SendMoi` casing in the eyebrow label
+- Mobile overflow fix:
+  - constrained `Coming soon` annotation offsets on the landing page so narrow screens do not side-scroll
 - Added deploy scripts (based on `nieder.me` deploy flow, production-only):
   - `scripts/deploy.sh`
   - `scripts/set-site-url.sh`

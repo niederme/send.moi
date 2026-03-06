@@ -1,10 +1,10 @@
 # SendMoi Marketing Handoff
 
-Last updated: March 5, 2026
+Last updated: March 6, 2026
 
 ## Branch
 
-- `main`
+- `codex/site-page-edits`
 
 ## Current focus
 
@@ -33,7 +33,7 @@ Last updated: March 5, 2026
   - canonical/OG/twitter URLs now use `https://send.moi`
   - legal links now route to `/privacy/`, `/terms/`, `/accessibility/`
 - Updated app icon references with cache busting:
-  - `app-icon.png?v=20260305-4`
+  - `app-icon.png?v=20260305-5`
 - Updated support email references:
   - `help@mail.moi`
 - Footer refinements:

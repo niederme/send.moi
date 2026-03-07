@@ -4,10 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta name="theme-color" content="#ebe9e3" />
-    <title>SendMoi | Your inbox, in two taps</title>
+    <title>SendMoi | Save anything worth keeping to your inbox</title>
     <meta
       name="description"
-      content="SendMoi makes it easy to send links to your Gmail inbox without losing them in tabs, bookmarks, or chats."
+      content="SendMoi lets you share links to Gmail in two taps so they do not disappear into tabs, bookmarks, or group chats."
     />
     <link rel="canonical" href="https://send.moi/" />
     <link rel="icon" type="image/png" href="./assets/images/sendmoi/app-icon.png?v=20260307-1" />
@@ -15,10 +15,10 @@
 
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_US" />
-    <meta property="og:title" content="SendMoi | Your inbox, in two taps" />
+    <meta property="og:title" content="SendMoi | Save anything worth keeping to your inbox" />
     <meta
       property="og:description"
-      content="SendMoi makes it easy to send links to your Gmail inbox without losing them in tabs, bookmarks, or chats."
+      content="SendMoi lets you share links to Gmail in two taps so they do not disappear into tabs, bookmarks, or group chats."
     />
     <meta property="og:url" content="https://send.moi/" />
     <meta property="og:site_name" content="John Niedermeyer" />
@@ -30,10 +30,10 @@
     <meta property="og:image:alt" content="SendMoi app icon." />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="SendMoi | Your inbox, in two taps" />
+    <meta name="twitter:title" content="SendMoi | Save anything worth keeping to your inbox" />
     <meta
       name="twitter:description"
-      content="SendMoi makes it easy to send links to your Gmail inbox without losing them in tabs, bookmarks, or chats."
+      content="SendMoi lets you share links to Gmail in two taps so they do not disappear into tabs, bookmarks, or group chats."
     />
     <meta name="twitter:url" content="https://send.moi/" />
     <meta name="twitter:image" content="https://send.moi/assets/images/sendmoi/app-icon.png?v=20260307-1" />
@@ -246,7 +246,7 @@
 
       .hero {
         display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
         gap: 24px;
         align-items: start;
       }
@@ -275,7 +275,7 @@
 
       h1 {
         margin: 0;
-        max-width: 8.3ch;
+        max-width: none;
         font-size: clamp(54px, 8.4vw, 102px);
         line-height: 0.9;
         font-weight: 700;
@@ -286,6 +286,7 @@
       .gradient-wording {
         display: block;
         padding-bottom: 0.1em;
+        white-space: nowrap;
         background: linear-gradient(135deg, var(--blue) 8%, #2d72ff 34%, #4665ff 62%, #6b59ff 78%, #a648ff 90%, #ff58c6 100%);
         -webkit-background-clip: text;
         background-clip: text;
@@ -305,6 +306,11 @@
         line-height: 1.45;
         font-weight: 300;
         text-wrap: pretty;
+      }
+
+      .hero-support {
+        margin: 18px 0 0;
+        max-width: 36rem;
       }
 
       .hero-download {
@@ -527,6 +533,44 @@
       .feature-stack {
         display: grid;
         gap: 40px;
+      }
+
+      .comparison-panel {
+        gap: 22px;
+        padding: 22px;
+      }
+
+      .comparison-panel .value-title {
+        max-width: 14ch;
+      }
+
+      .comparison-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      .comparison-item {
+        min-width: 0;
+        padding: 16px 18px;
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        background: var(--card-solid);
+        color: var(--ink);
+        font-size: 15px;
+        line-height: 1.35;
+        font-weight: 400;
+        text-wrap: balance;
+      }
+
+      .comparison-conclusion {
+        margin: 0;
+        max-width: 34ch;
+        color: var(--muted);
+        font-size: clamp(17px, 1.9vw, 22px);
+        line-height: 1.4;
+        font-weight: 300;
+        text-wrap: pretty;
       }
 
       .feature-row {
@@ -921,6 +965,10 @@
           grid-template-columns: 1fr;
         }
 
+        .comparison-grid {
+          grid-template-columns: 1fr;
+        }
+
         .hero-download .store-actions {
           justify-content: center;
           gap: 10px;
@@ -959,7 +1007,7 @@
         }
 
         h1 {
-          max-width: 7.9ch;
+          max-width: none;
           font-size: clamp(46px, 7vw, 82px);
         }
 
@@ -1122,6 +1170,16 @@
           border-radius: 24px;
         }
 
+        .comparison-panel {
+          gap: 18px;
+          padding: 16px;
+        }
+
+        .comparison-item {
+          padding: 14px 16px;
+          border-radius: 18px;
+        }
+
         .feature-media {
           border-radius: 18px;
         }
@@ -1180,15 +1238,21 @@
           </p>
 
           <h1 id="sendmoi-title">
-            <span class="gradient-wording">Your inbox,</span>
-            <span class="gradient-wording">in two taps.</span>
+            <span class="gradient-wording">Save anything</span>
+            <span class="gradient-wording">worth keeping</span>
+            <span class="gradient-wording">to your</span>
+            <span class="gradient-wording">inbox.</span>
           </h1>
 
           <div class="hero-copy">
             <p>
-              SendMoi makes it easy to send links to your Gmail inbox without losing them in tabs, bookmarks, or&nbsp;chats.
+              SendMoi lets you share links to Gmail in two taps, so they don&apos;t disappear into tabs, bookmarks, or group chats.
             </p>
           </div>
+
+          <p class="comparison-conclusion hero-support">
+            Sent through your own Gmail account. No backend storing your session, recipients, or queued mail.
+          </p>
 
           <div class="hero-download">
             <div class="store-actions store-actions--coming-soon" aria-label="SendMoi hero store buttons (coming soon)">
@@ -1250,7 +1314,21 @@
         </section>
       </section>
 
-      <section class="value-strip" aria-label="SendMoi features">
+      <section class="value-strip" aria-label="SendMoi value propositions and features">
+        <article class="feature-item comparison-panel" aria-labelledby="comparison-title">
+          <div>
+            <p class="eyebrow">Why it helps</p>
+            <h2 class="value-title" id="comparison-title">Better than your current workaround</h2>
+          </div>
+          <div class="comparison-grid" aria-label="Common ways links get lost">
+            <div class="comparison-item">Tabs get forgotten</div>
+            <div class="comparison-item">Bookmarks become junk drawers</div>
+            <div class="comparison-item">Texts and chats bury links in noise</div>
+          </div>
+          <p class="comparison-conclusion">SendMoi puts the thing where you already return: your inbox.</p>
+          <!-- TODO: Add a future messy-vs-clean comparison visual here if matching artwork is created. -->
+        </article>
+
         <div class="feature-stack">
           <div class="feature-row feature-row--two">
             <article class="feature-item">
@@ -1258,40 +1336,40 @@
                 <img
                   class="feature-image feature-image--light"
                   src="./assets/images/sendmoi/features/01-Light.png"
-                  alt="SendMoi share sheet marketing image"
+                  alt="SendMoi save from anywhere marketing image"
                   loading="lazy"
                   decoding="async"
                 />
                 <img
                   class="feature-image feature-image--dark"
                   src="./assets/images/sendmoi/features/01-Dark.png"
-                  alt="SendMoi share sheet marketing image"
+                  alt="SendMoi save from anywhere marketing image"
                   loading="lazy"
                   decoding="async"
                 />
               </div>
-              <h3>Share with SendMoi</h3>
-              <p>Share with SendMoi from the system sheet, and it arrives as a polished email instead of getting lost in tabs, bookmarks, or chats.</p>
+              <h3>Save from anywhere</h3>
+              <p>Use the system share sheet to send a link straight to your inbox. No copying, pasting, self-texting, or leaving a forest of tabs open.</p>
             </article>
             <article class="feature-item">
               <div class="feature-media">
                 <img
                   class="feature-image feature-image--light"
                   src="./assets/images/sendmoi/features/02-Light.png"
-                  alt="SendMoi Gmail and privacy marketing image"
+                  alt="SendMoi sent through Gmail marketing image"
                   loading="lazy"
                   decoding="async"
                 />
                 <img
                   class="feature-image feature-image--dark"
                   src="./assets/images/sendmoi/features/02-Dark.png"
-                  alt="SendMoi Gmail and privacy marketing image"
+                  alt="SendMoi sent through Gmail marketing image"
                   loading="lazy"
                   decoding="async"
                 />
               </div>
-              <h3>Your Gmail, kept private</h3>
-              <p>It sends through your own Gmail account. SendMoi stays local-first, with no backend storing your session, recipients, or queued mail.</p>
+              <h3>Sent through your own Gmail</h3>
+              <p>SendMoi uses your Gmail account to send the message. It stays local-first, with no backend storing your session, recipients, or queued mail.</p>
             </article>
           </div>
 
@@ -1301,20 +1379,20 @@
                 <img
                   class="feature-image feature-image--light"
                   src="./assets/images/sendmoi/features/03-Light.png"
-                  alt="SendMoi rich email marketing image"
+                  alt="SendMoi readable later marketing image"
                   loading="lazy"
                   decoding="async"
                 />
                 <img
                   class="feature-image feature-image--dark"
                   src="./assets/images/sendmoi/features/03-Dark.png"
-                  alt="SendMoi rich email marketing image"
+                  alt="SendMoi readable later marketing image"
                   loading="lazy"
                   decoding="async"
                 />
               </div>
-              <h3>Readable when it lands</h3>
-              <p>The result is easy to scan: a clean subject, useful context, and a source link that still feels good on both phone and desktop.</p>
+              <h3>Actually readable later</h3>
+              <p>Each link arrives as a clean, scannable email with a useful subject, source context, and a direct link back.</p>
             </article>
           </div>
 
@@ -1324,40 +1402,40 @@
                 <img
                   class="feature-image feature-image--light"
                   src="./assets/images/sendmoi/features/04-Light.png"
-                  alt="SendMoi offline queue marketing image"
+                  alt="SendMoi offline local queue marketing image"
                   loading="lazy"
                   decoding="async"
                 />
                 <img
                   class="feature-image feature-image--dark"
                   src="./assets/images/sendmoi/features/04-Dark.png"
-                  alt="SendMoi offline queue marketing image"
+                  alt="SendMoi offline local queue marketing image"
                   loading="lazy"
                   decoding="async"
                 />
               </div>
-              <h3>Offline queue</h3>
-              <p>If the network is flaky, the send is not dropped. SendMoi keeps it in a local queue and retries when the app wakes up or connectivity returns.</p>
+              <h3>Works even when your signal doesn&apos;t</h3>
+              <p>If you share something with weak or flaky service, SendMoi keeps it in a local queue and retries when connectivity comes back.</p>
             </article>
             <article class="feature-item">
               <div class="feature-media">
                 <img
                   class="feature-image feature-image--light"
                   src="./assets/images/sendmoi/features/05-Light.png"
-                  alt="SendMoi recent recipients marketing image"
+                  alt="SendMoi repeat sharing and recipients marketing image"
                   loading="lazy"
                   decoding="async"
                 />
                 <img
                   class="feature-image feature-image--dark"
                   src="./assets/images/sendmoi/features/05-Dark.png"
-                  alt="SendMoi recent recipients marketing image"
+                  alt="SendMoi repeat sharing and recipients marketing image"
                   loading="lazy"
                   decoding="async"
                 />
               </div>
-              <h3>Recent recipients</h3>
-              <p>Keep a default recipient ready, then switch fast with recent-recipient shortcuts when something needs to go somewhere else.</p>
+              <h3>Built for repeat sharing</h3>
+              <p>Keep your usual inbox ready, then switch quickly when something needs to go to someone else.</p>
             </article>
           </div>
         </div>

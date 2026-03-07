@@ -4,7 +4,7 @@ Last updated: March 7, 2026
 
 ## Branch
 
-- `codex/site-page-edits`
+- `codex/copy-refresh`
 
 ## Current focus
 
@@ -12,14 +12,27 @@ Last updated: March 7, 2026
 - Consistent local dev workflow (`make`, `make dev-live`, `.local` + LAN URLs)
 - Footer and support-contact consistency across all pages
 - Production deploy workflow for standalone `send.moi`
-- Final responsive polish before deploy / machine handoff
+- Homepage messaging refresh before final deploy
 
 ## What changed
 
-- Reworked the landing-page hero messaging to match the App Store pairing:
-  - title treatment remains `SendMoi`
-  - hero headline now reads `Your inbox, in two taps.`
-  - supporting gray copy now carries the Gmail mention
+- Repositioned the homepage messaging around the outcome:
+  - hero headline now reads `Save anything worth keeping to your inbox.`
+  - hero body now explicitly frames the problem as links disappearing into tabs, bookmarks, and chats
+  - added a short trust line near the CTA about Gmail delivery and no backend storing session, recipients, or queued mail
+- Added a compact comparison section above the feature grid:
+  - title: `Better than your current workaround`
+  - comparison items call out forgotten tabs, junk-drawer bookmarks, and noisy chats/texts
+  - closes with the inbox-centered value proposition
+- Rewrote feature-card titles and body copy to match the current real product behavior:
+  - `Save from anywhere`
+  - `Sent through your own Gmail`
+  - `Actually readable later`
+  - `Works even when your signal doesn't`
+  - `Built for repeat sharing`
+- Updated homepage SEO strings to match the new positioning.
+- Updated feature-image alt text to reflect the renamed sections.
+- Left a markup TODO for a future `messy vs clean` visual in the new comparison section.
 - Applied typography wrapping defaults across the site:
   - `text-wrap: balance` on headings
   - `text-wrap: pretty` on longer body copy
@@ -72,7 +85,8 @@ Last updated: March 7, 2026
 ## Open items
 
 - Replace temporary App Store `href="#"` targets with live store URLs at launch.
-- Run final visual QA on desktop + iPhone Safari for hero transition and footer spacing consistency.
+- Consider replacing one comparison tile with a bespoke `messy vs clean` visual once artwork exists.
+- Run final visual QA on desktop + iPhone Safari for homepage copy rhythm, hero spacing, and footer spacing consistency.
 - Run `DRY_RUN=1 ./scripts/deploy.sh`, then production deploy once SSH access is available from the active machine.
 
 ## Local run
@@ -91,7 +105,7 @@ Last updated: March 7, 2026
 ## Resume checklist
 
 1. `git fetch --all`
-2. `git checkout codex/site-page-edits`
+2. `git checkout codex/copy-refresh`
 3. `git pull --ff-only`
 4. `make`
 5. Validate `/`, `/privacy/`, `/terms/`, `/accessibility/` in browser

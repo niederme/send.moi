@@ -17,6 +17,8 @@ Marketing site for SendMoi.
 
 - On narrow mobile viewports, the `Coming soon` App Store annotation is constrained to the card edge to avoid horizontal side-scroll.
 - The landing-page hero now collapses to a stacked layout earlier at mid-width breakpoints so the demo video can stay centered and effectively full-width.
+- Homepage messaging now leads with the outcome of saving links to your inbox, adds a short workaround-comparison section above the feature grid, and keeps the copy grounded in the current shipped product behavior.
+- Follow-up visual recommendation: add a bespoke "messy vs clean" comparison visual for the new workaround section when matching art is available.
 
 ## Local dev
 

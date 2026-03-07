@@ -15,6 +15,13 @@ Last updated: March 6, 2026
 
 ## What changed
 
+- Reworked the landing-page hero messaging to match the App Store pairing:
+  - title treatment remains `SendMoi`
+  - hero headline now reads `Your inbox, in two taps.`
+  - supporting gray copy now carries the Gmail mention
+- Applied typography wrapping defaults across the site:
+  - `text-wrap: balance` on headings
+  - `text-wrap: pretty` on longer body copy
 - Added repository GitHub issue-handling instructions in `AGENTS.md`:
   - `GHI:` messages should create GitHub issues directly
   - infer issue type/labels unless explicitly provided

@@ -10,8 +10,8 @@
       content="SendMoi makes it easy to send links to your Gmail inbox without losing them in tabs, bookmarks, or chats."
     />
     <link rel="canonical" href="https://send.moi/" />
-    <link rel="icon" type="image/png" href="./assets/images/sendmoi/app-icon.png?v=20260305-5" />
-    <link rel="apple-touch-icon" href="./assets/images/sendmoi/app-icon.png?v=20260305-5" />
+    <link rel="icon" type="image/png" href="./assets/images/sendmoi/app-icon.png?v=20260307-1" />
+    <link rel="apple-touch-icon" href="./assets/images/sendmoi/app-icon.png?v=20260307-1" />
 
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_US" />
@@ -22,8 +22,8 @@
     />
     <meta property="og:url" content="https://send.moi/" />
     <meta property="og:site_name" content="John Niedermeyer" />
-    <meta property="og:image" content="https://send.moi/assets/images/sendmoi/app-icon.png?v=20260305-5" />
-    <meta property="og:image:secure_url" content="https://send.moi/assets/images/sendmoi/app-icon.png?v=20260305-5" />
+    <meta property="og:image" content="https://send.moi/assets/images/sendmoi/app-icon.png?v=20260307-1" />
+    <meta property="og:image:secure_url" content="https://send.moi/assets/images/sendmoi/app-icon.png?v=20260307-1" />
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="1024" />
     <meta property="og:image:height" content="1024" />
@@ -36,7 +36,7 @@
       content="SendMoi makes it easy to send links to your Gmail inbox without losing them in tabs, bookmarks, or chats."
     />
     <meta name="twitter:url" content="https://send.moi/" />
-    <meta name="twitter:image" content="https://send.moi/assets/images/sendmoi/app-icon.png?v=20260305-5" />
+    <meta name="twitter:image" content="https://send.moi/assets/images/sendmoi/app-icon.png?v=20260307-1" />
     <meta name="twitter:image:alt" content="SendMoi app icon." />
 
     <script>
@@ -896,7 +896,6 @@
       }
 
       @media (max-width: 920px) {
-        .hero,
         .value-strip {
           grid-template-columns: 1fr;
         }
@@ -908,6 +907,10 @@
         .video-stage {
           justify-content: center;
           min-height: auto;
+        }
+
+        .device-shell {
+          width: min(100%, clamp(248px, 34vw, 320px));
         }
 
         .value-title {
@@ -945,7 +948,87 @@
         }
       }
 
-      @media (max-width: 680px) {
+      @media (max-width: 920px) and (min-width: 701px) {
+        .hero {
+          grid-template-columns: minmax(0, 1.18fr) minmax(0, 0.82fr);
+          gap: 20px;
+        }
+
+        .brand {
+          font-size: clamp(30px, 4vw, 46px);
+        }
+
+        h1 {
+          max-width: 7.9ch;
+          font-size: clamp(46px, 7vw, 82px);
+        }
+
+        .hero-copy p {
+          max-width: 34ch;
+          font-size: clamp(16px, 1.95vw, 19px);
+        }
+
+        .device-shell {
+          width: min(100%, clamp(220px, 30vw, 292px));
+        }
+
+        .hero-download .store-actions {
+          justify-content: flex-start;
+          gap: 12px;
+        }
+
+        .hero-download .store-actions--coming-soon {
+          margin-inline: 0;
+          margin-bottom: 34px;
+        }
+
+        .hero-download .coming-soon-mark {
+          top: -4px;
+          left: 0;
+          width: 100%;
+        }
+
+        .hero-download .coming-soon-text {
+          right: 0;
+          bottom: -58px;
+          width: clamp(176px, 39%, 228px);
+        }
+
+        .hero-download .store-badge-link {
+          transform-origin: left center;
+        }
+      }
+
+      @media (max-width: 700px) and (min-width: 621px) {
+        .hero {
+          grid-template-columns: 1fr;
+          gap: 18px;
+        }
+
+        .video-stage {
+          width: 100%;
+          max-width: none;
+          justify-self: stretch;
+          margin-top: 32px;
+        }
+
+        .video-stage,
+        .value-strip {
+          border-radius: 28px;
+        }
+
+        .video-stage,
+        .value-strip {
+          padding: 16px;
+        }
+
+        .device-shell {
+          width: 100%;
+          max-width: none;
+        }
+      }
+
+      @media (max-width: 620px) {
         .page {
           width: min(1160px, calc(100vw - 24px));
           padding-top: 16px;
@@ -957,6 +1040,7 @@
         }
 
         .hero {
+          grid-template-columns: 1fr;
           gap: 18px;
         }
 
@@ -1000,6 +1084,9 @@
 
         .video-stage {
           margin-top: 36px;
+          width: 100%;
+          max-width: none;
+          justify-self: stretch;
         }
 
         .video-stage,
@@ -1013,7 +1100,8 @@
         }
 
         .device-shell {
-          width: min(100%, 292px);
+          width: 100%;
+          max-width: none;
         }
 
         .device-bezel {
@@ -1067,6 +1155,12 @@
           right: 0;
         }
       }
+
+      @media (max-width: 430px) {
+        .device-shell {
+          width: 100%;
+        }
+      }
     </style>
   </head>
   <body>
@@ -1081,7 +1175,7 @@
       <section class="hero" aria-labelledby="sendmoi-title">
         <div class="hero-content">
           <p class="brand">
-            <img src="./assets/images/sendmoi/app-icon.png?v=20260305-5" alt="SendMoi app icon" width="1024" height="1024" />
+            <img src="./assets/images/sendmoi/app-icon.png?v=20260307-1" alt="SendMoi app icon" width="1024" height="1024" />
             <span>SendMoi</span>
           </p>
 

@@ -16,6 +16,7 @@ Marketing site for SendMoi.
 ## UI notes
 
 - On narrow mobile viewports, the `Coming soon` App Store annotation is constrained to the card edge to avoid horizontal side-scroll.
+- The landing-page hero now collapses to a stacked layout earlier at mid-width breakpoints so the demo video can stay centered and effectively full-width.
 
 ## Local dev
 

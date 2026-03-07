@@ -21,7 +21,6 @@ Last updated: March 6, 2026
   - supporting gray copy now carries the Gmail mention
 - Applied typography wrapping defaults across the site:
   - `text-wrap: balance` on headings
-  - `text-wrap: pretty` on longer body copy
 - Added repository GitHub issue-handling instructions in `AGENTS.md`:
   - `GHI:` messages should create GitHub issues directly
   - infer issue type/labels unless explicitly provided

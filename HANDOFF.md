@@ -70,6 +70,9 @@ Last updated: March 9, 2026
   - favicon tags now include a dark-mode icon variant (`media="(prefers-color-scheme: dark)"`)
   - social preview metadata uses `app-icon-light.png`
 - Resynced the light/dark icon sources again from `/Users/niederme/~Repos/sendmoi/marketing/app-icons` and bumped live references to `v=20260309-2`
+- Adjusted the marketing color palette to match `/Users/niederme/~Repos/sendmoi/SendMoi/AppIcon.icon`:
+  - remapped primary blue/violet accent tokens to icon-aligned values
+  - updated gradient stops and accent rgba overlays on homepage + policy pages
 - Added deploy scripts (based on `nieder.me` deploy flow, production-only):
   - `scripts/deploy.sh`
   - `scripts/set-site-url.sh`

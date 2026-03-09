@@ -21,6 +21,7 @@ Marketing site for SendMoi.
   - `assets/images/sendmoi/app-icon-light.png`
   - `assets/images/sendmoi/app-icon-dark.png`
   - `assets/images/sendmoi/app-icon.png` remains as a light fallback export
+- Brand accent colors across the site are synced to the app icon source palette from `SendMoi/AppIcon.icon` (blue/violet gradient family).
 
 ## Local dev
 

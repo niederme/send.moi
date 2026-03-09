@@ -69,6 +69,7 @@ Last updated: March 9, 2026
   - homepage and policy/accessibility/terms hero icons now switch by theme (system preference + manual toggle)
   - favicon tags now include a dark-mode icon variant (`media="(prefers-color-scheme: dark)"`)
   - social preview metadata uses `app-icon-light.png`
+- Resynced the light/dark icon sources again from `/Users/niederme/~Repos/sendmoi/marketing/app-icons` and bumped live references to `v=20260309-2`
 - Added deploy scripts (based on `nieder.me` deploy flow, production-only):
   - `scripts/deploy.sh`
   - `scripts/set-site-url.sh`

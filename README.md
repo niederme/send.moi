@@ -17,6 +17,10 @@ Marketing site for SendMoi.
 
 - On narrow mobile viewports, the `Coming soon` App Store annotation is constrained to the card edge to avoid horizontal side-scroll.
 - The landing-page hero now collapses to a stacked layout earlier at mid-width breakpoints so the demo video can stay centered and effectively full-width.
+- Marketing icon assets now ship as theme variants:
+  - `assets/images/sendmoi/app-icon-light.png`
+  - `assets/images/sendmoi/app-icon-dark.png`
+  - `assets/images/sendmoi/app-icon.png` remains as a light fallback export
 
 ## Local dev
 
@@ -92,3 +96,5 @@ Override as needed, for example:
 ```bash
 DEPLOY_PATH=/home/suckahs/public_html/custom-sendmoi ./scripts/deploy.sh
 ```
+
+`deploy.sh` automatically updates cache-bust query strings for both `app-icon-light.png` and `app-icon-dark.png` across all pages.

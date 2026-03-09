@@ -7,8 +7,9 @@
     <title>SendMoi Accessibility Statement</title>
     <meta name="description" content="Accessibility Statement for SendMoi by John Niedermeyer." />
     <link rel="canonical" href="https://send.moi/accessibility/" />
-    <link rel="icon" type="image/png" href="../assets/images/sendmoi/app-icon.png?v=20260307-1" />
-    <link rel="apple-touch-icon" href="../assets/images/sendmoi/app-icon.png?v=20260307-1" />
+    <link rel="icon" type="image/png" href="../assets/images/sendmoi/app-icon-light.png?v=20260309-1" />
+    <link rel="icon" type="image/png" href="../assets/images/sendmoi/app-icon-dark.png?v=20260309-1" media="(prefers-color-scheme: dark)" />
+    <link rel="apple-touch-icon" href="../assets/images/sendmoi/app-icon-light.png?v=20260309-1" />
 
     <script>
       (() => {
@@ -212,11 +213,41 @@
         height: clamp(56px, 7vw, 74px);
       }
 
-      .hero-icon img {
+      .hero-icon-image {
         width: 100%;
         height: 100%;
         border-radius: 20px;
         box-shadow: var(--shadow-md);
+      }
+
+      .hero-icon-image--dark {
+        display: none;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        .hero-icon-image--light {
+          display: none;
+        }
+
+        .hero-icon-image--dark {
+          display: block;
+        }
+      }
+
+      html[data-theme="light"] .hero-icon-image--light {
+        display: block;
+      }
+
+      html[data-theme="light"] .hero-icon-image--dark {
+        display: none;
+      }
+
+      html[data-theme="dark"] .hero-icon-image--light {
+        display: none;
+      }
+
+      html[data-theme="dark"] .hero-icon-image--dark {
+        display: block;
       }
 
       .eyebrow {
@@ -423,7 +454,20 @@
 
       <section class="hero" aria-labelledby="accessibility-title">
         <div class="hero-icon">
-          <img src="../assets/images/sendmoi/app-icon.png?v=20260307-1" alt="SendMoi app icon" width="1024" height="1024" />
+          <img
+            class="hero-icon-image hero-icon-image--light"
+            src="../assets/images/sendmoi/app-icon-light.png?v=20260309-1"
+            alt="SendMoi app icon"
+            width="1024"
+            height="1024"
+          />
+          <img
+            class="hero-icon-image hero-icon-image--dark"
+            src="../assets/images/sendmoi/app-icon-dark.png?v=20260309-1"
+            alt="SendMoi app icon"
+            width="1024"
+            height="1024"
+          />
         </div>
         <div>
           <p class="eyebrow">SendMoi</p>

@@ -1,10 +1,10 @@
 # SendMoi Marketing Handoff
 
-Last updated: March 7, 2026
+Last updated: March 9, 2026
 
 ## Branch
 
-- `codex/site-page-edits`
+- `codex/marketing-light-dark-icons`
 
 ## Current focus
 
@@ -62,12 +62,19 @@ Last updated: March 7, 2026
   - kept App Store badges centered in stacked states and left-aligned in the wider 2-column state
 - Refreshed icon cache-busting references across all pages:
   - `app-icon.png?v=20260307-1`
+- Updated marketing app icon assets to separate light/dark variants sourced from iOS exports:
+  - added `assets/images/sendmoi/app-icon-light.png` (default/light)
+  - added `assets/images/sendmoi/app-icon-dark.png` (dark)
+  - refreshed `assets/images/sendmoi/app-icon.png` as the light fallback export
+  - homepage and policy/accessibility/terms hero icons now switch by theme (system preference + manual toggle)
+  - favicon tags now include a dark-mode icon variant (`media="(prefers-color-scheme: dark)"`)
+  - social preview metadata uses `app-icon-light.png`
 - Added deploy scripts (based on `nieder.me` deploy flow, production-only):
   - `scripts/deploy.sh`
   - `scripts/set-site-url.sh`
   - defaults: `suckahs.org` / `suckahs` / `/home/suckahs/public_html/sendmoi`
   - supports `DRY_RUN=1` preview mode
-  - auto-updates canonical/social URLs and bumps `app-icon.png?v=YYYYMMDD-N`
+  - auto-updates canonical/social URLs and bumps icon cache-busting for `app-icon-light.png` and `app-icon-dark.png`
 
 ## Open items
 
@@ -91,7 +98,7 @@ Last updated: March 7, 2026
 ## Resume checklist
 
 1. `git fetch --all`
-2. `git checkout codex/site-page-edits`
+2. `git checkout codex/marketing-light-dark-icons`
 3. `git pull --ff-only`
 4. `make`
 5. Validate `/`, `/privacy/`, `/terms/`, `/accessibility/` in browser

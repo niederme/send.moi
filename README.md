@@ -22,6 +22,10 @@ Marketing site for SendMoi.
   - `assets/images/sendmoi/app-icon-dark.png`
   - `assets/images/sendmoi/app-icon.png` remains as a light fallback export
 - Brand accent colors across the site are synced to the app icon source palette from `SendMoi/AppIcon.icon` (blue/violet gradient family).
+- Feature visuals for `Your Gmail, kept private`, `Offline queue`, and `Recent recipients` are now custom in-repo illustrations with matching light/dark PNG variants:
+  - `assets/images/sendmoi/features/02-{Light,Dark}.png`
+  - `assets/images/sendmoi/features/04-{Light,Dark}.png`
+  - `assets/images/sendmoi/features/05-{Light,Dark}.png`
 
 ## Local dev
 

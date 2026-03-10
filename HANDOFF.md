@@ -1,6 +1,6 @@
 # SendMoi Marketing Handoff
 
-Last updated: March 9, 2026
+Last updated: March 10, 2026
 
 ## Branch
 
@@ -82,6 +82,10 @@ Last updated: March 9, 2026
 - Video asset cleanup:
   - replaced `assets/videos/sendmoi/sendmoi-demo-hero.mp4` with a newly recaptured hero recording
   - removed unused `assets/videos/sendmoi/sendmoi-demo-short.mp4`
+- Replaced placeholder artwork for three feature cards with custom light/dark illustrations:
+  - `Your Gmail, kept private` -> `assets/images/sendmoi/features/02-{Light,Dark}.png`
+  - `Offline queue` -> `assets/images/sendmoi/features/04-{Light,Dark}.png`
+  - `Recent recipients` -> `assets/images/sendmoi/features/05-{Light,Dark}.png`
 
 ## Open items
 

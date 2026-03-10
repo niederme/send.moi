@@ -1,18 +1,17 @@
 # SendMoi Marketing Handoff
 
-Last updated: March 7, 2026
+Last updated: March 10, 2026
 
 ## Branch
 
-- `codex/site-page-edits`
+- `codex/update-icon-art-page`
 
 ## Current focus
 
-- Standalone `send.moi` marketing site migration from `nieder.me/sendmoi`
-- Consistent local dev workflow (`make`, `make dev-live`, `.local` + LAN URLs)
-- Footer and support-contact consistency across all pages
-- Production deploy workflow for standalone `send.moi`
-- Final responsive polish before deploy / machine handoff
+- Refreshing visual branding details on live pages:
+  - updated app icon art
+  - updated heading gradient stops
+- Keeping deployment/docs handoff aligned with active branch state
 
 ## What changed
 
@@ -62,6 +61,14 @@ Last updated: March 7, 2026
   - kept App Store badges centered in stacked states and left-aligned in the wider 2-column state
 - Refreshed icon cache-busting references across all pages:
   - `app-icon.png?v=20260307-1`
+- Refreshed app icon art in `assets/images/sendmoi/app-icon.png` and bumped references:
+  - `app-icon.png?v=20260310-1`
+- Updated heading gradients on all page hero titles to:
+  - `#2B7FFF` at `0%`
+  - `#4D5DFE` at `45%`
+  - `#9810FA` at `100%`
+- Created GitHub issue for this work:
+  - `#5` Update page icon art and heading gradient
 - Added deploy scripts (based on `nieder.me` deploy flow, production-only):
   - `scripts/deploy.sh`
   - `scripts/set-site-url.sh`
@@ -72,7 +79,7 @@ Last updated: March 7, 2026
 ## Open items
 
 - Replace temporary App Store `href="#"` targets with live store URLs at launch.
-- Run final visual QA on desktop + iPhone Safari for hero transition and footer spacing consistency.
+- Run final visual QA on desktop + iPhone Safari for icon rendering and heading-gradient consistency.
 - Run `DRY_RUN=1 ./scripts/deploy.sh`, then production deploy once SSH access is available from the active machine.
 
 ## Local run
@@ -91,7 +98,7 @@ Last updated: March 7, 2026
 ## Resume checklist
 
 1. `git fetch --all`
-2. `git checkout codex/site-page-edits`
+2. `git checkout codex/update-icon-art-page`
 3. `git pull --ff-only`
 4. `make`
 5. Validate `/`, `/privacy/`, `/terms/`, `/accessibility/` in browser

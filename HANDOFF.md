@@ -4,7 +4,7 @@ Last updated: March 10, 2026
 
 ## Branch
 
-- `codex/update-icon-art-page`
+- `codex/marketing-light-dark-icons`
 
 ## Current focus
 
@@ -74,7 +74,14 @@ Last updated: March 10, 2026
   - `scripts/set-site-url.sh`
   - defaults: `suckahs.org` / `suckahs` / `/home/suckahs/public_html/sendmoi`
   - supports `DRY_RUN=1` preview mode
-  - auto-updates canonical/social URLs and bumps `app-icon.png?v=YYYYMMDD-N`
+  - auto-updates canonical/social URLs and bumps icon cache-busting for `app-icon-light.png` and `app-icon-dark.png`
+- Video asset cleanup:
+  - replaced `assets/videos/sendmoi/sendmoi-demo-hero.mp4` with a newly recaptured hero recording
+  - removed unused `assets/videos/sendmoi/sendmoi-demo-short.mp4`
+- Replaced placeholder artwork for three feature cards with custom light/dark illustrations:
+  - `Your Gmail, kept private` -> `assets/images/sendmoi/features/02-{Light,Dark}.png`
+  - `Offline queue` -> `assets/images/sendmoi/features/04-{Light,Dark}.png`
+  - `Recent recipients` -> `assets/images/sendmoi/features/05-{Light,Dark}.png`
 
 ## Open items
 
@@ -98,7 +105,7 @@ Last updated: March 10, 2026
 ## Resume checklist
 
 1. `git fetch --all`
-2. `git checkout codex/update-icon-art-page`
+2. `git checkout codex/marketing-light-dark-icons`
 3. `git pull --ff-only`
 4. `make`
 5. Validate `/`, `/privacy/`, `/terms/`, `/accessibility/` in browser

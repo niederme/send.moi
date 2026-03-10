@@ -53,9 +53,9 @@
         --line-strong: rgba(12, 14, 22, 0.14);
         --card: rgba(255, 255, 255, 0.84);
         --card-solid: rgba(255, 255, 255, 0.64);
-        --blue: #1f6dff;
-        --violet: #8e2dff;
-        --pink: #ff58c6;
+        --blue: #2b7fff;
+        --violet: #9810fa;
+        --pink: #9810fa;
         --page-background:
           radial-gradient(circle at 16% 14%, rgba(255, 255, 255, 0.9), transparent 24%),
           radial-gradient(circle at 38% 18%, rgba(255, 255, 255, 0.72), transparent 18%),
@@ -75,8 +75,8 @@
           --card: rgba(21, 24, 34, 0.78);
           --card-solid: rgba(28, 32, 44, 0.72);
           --page-background:
-            radial-gradient(circle at 18% 14%, rgba(31, 109, 255, 0.12), transparent 22%),
-            radial-gradient(circle at 62% 18%, rgba(142, 45, 255, 0.12), transparent 18%),
+            radial-gradient(circle at 18% 14%, rgba(43, 127, 255, 0.12), transparent 22%),
+            radial-gradient(circle at 62% 18%, rgba(152, 16, 250, 0.12), transparent 18%),
             linear-gradient(180deg, #0b0f18 0%, #0a0d14 42%, #080a10 100%);
           --shadow-lg: 0 28px 72px rgba(0, 0, 0, 0.34);
           --shadow-md: 0 16px 40px rgba(0, 0, 0, 0.24);
@@ -109,8 +109,8 @@
         --card: rgba(21, 24, 34, 0.78);
         --card-solid: rgba(28, 32, 44, 0.72);
         --page-background:
-          radial-gradient(circle at 18% 14%, rgba(31, 109, 255, 0.12), transparent 22%),
-          radial-gradient(circle at 62% 18%, rgba(142, 45, 255, 0.12), transparent 18%),
+          radial-gradient(circle at 18% 14%, rgba(43, 127, 255, 0.12), transparent 22%),
+          radial-gradient(circle at 62% 18%, rgba(152, 16, 250, 0.12), transparent 18%),
           linear-gradient(180deg, #0b0f18 0%, #0a0d14 42%, #080a10 100%);
         --shadow-lg: 0 28px 72px rgba(0, 0, 0, 0.34);
         --shadow-md: 0 16px 40px rgba(0, 0, 0, 0.24);
@@ -212,11 +212,41 @@
         height: clamp(56px, 7vw, 74px);
       }
 
-      .hero-icon img {
+      .hero-icon-image {
         width: 100%;
         height: 100%;
         border-radius: 20px;
         box-shadow: var(--shadow-md);
+      }
+
+      .hero-icon-image--dark {
+        display: none;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        .hero-icon-image--light {
+          display: none;
+        }
+
+        .hero-icon-image--dark {
+          display: block;
+        }
+      }
+
+      html[data-theme="light"] .hero-icon-image--light {
+        display: block;
+      }
+
+      html[data-theme="light"] .hero-icon-image--dark {
+        display: none;
+      }
+
+      html[data-theme="dark"] .hero-icon-image--light {
+        display: none;
+      }
+
+      html[data-theme="dark"] .hero-icon-image--dark {
+        display: block;
       }
 
       .eyebrow {
@@ -341,7 +371,7 @@
         color: var(--ink);
         text-decoration: underline;
         text-underline-offset: 0.16em;
-        text-decoration-color: rgba(31, 109, 255, 0.45);
+        text-decoration-color: rgba(43, 127, 255, 0.45);
       }
 
       .footer-meta a:hover,
@@ -366,7 +396,7 @@
         line-height: 1.4;
         text-decoration: underline;
         text-underline-offset: 0.16em;
-        text-decoration-color: rgba(31, 109, 255, 0.45);
+        text-decoration-color: rgba(43, 127, 255, 0.45);
         transition: color 0.2s ease;
       }
 

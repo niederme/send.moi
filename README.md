@@ -19,6 +19,10 @@ Marketing site for SendMoi.
 - The landing-page hero now collapses to a stacked layout earlier at mid-width breakpoints so the demo video can stay centered and effectively full-width.
 - App icon art was refreshed in March 2026; all page-level icon references now use `app-icon.png?v=20260310-1`.
 - Heading gradients for the homepage hero and policy/accessibility page titles now use `#2B7FFF` (0%), `#4D5DFE` (45%), and `#9810FA` (100%).
+- Feature visuals for `Your Gmail, kept private`, `Offline queue`, and `Recent recipients` are custom in-repo illustrations with matching light/dark PNG variants:
+  - `assets/images/sendmoi/features/02-{Light,Dark}.png`
+  - `assets/images/sendmoi/features/04-{Light,Dark}.png`
+  - `assets/images/sendmoi/features/05-{Light,Dark}.png`
 
 ## Local dev
 
@@ -94,3 +98,5 @@ Override as needed, for example:
 ```bash
 DEPLOY_PATH=/home/suckahs/public_html/custom-sendmoi ./scripts/deploy.sh
 ```
+
+`deploy.sh` automatically updates cache-bust query strings for both `app-icon-light.png` and `app-icon-dark.png` across all pages.

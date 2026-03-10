@@ -33,9 +33,13 @@ fi
 ./scripts/set-site-url.sh "$SITE_URL"
 
 # Auto-bump icon cache-bust query string in all pages:
-# app-icon.png?v=YYYYMMDD-N
+# app-icon-light.png?v=YYYYMMDD-N and app-icon-dark.png?v=YYYYMMDD-N
 today="$(date +%Y%m%d)"
-existing_version="$(grep -Eo 'app-icon\.png\?v=[0-9]{8}-[0-9]+' index.html | head -n1 | sed -E 's#.*\?v=##' || true)"
+existing_version="$(
+  grep -Eo 'app-icon-(light|dark)\.png\?v=[0-9]{8}-[0-9]+' index.html | head -n1 | sed -E 's#.*\?v=##' \
+    || grep -Eo 'app-icon\.png\?v=[0-9]{8}-[0-9]+' index.html | head -n1 | sed -E 's#.*\?v=##' \
+    || true
+)"
 next_seq=1
 
 if [[ "$existing_version" =~ ^([0-9]{8})-([0-9]+)$ ]]; then
@@ -48,10 +52,10 @@ fi
 
 new_version="${today}-${next_seq}"
 
-perl -0pi -e "s#app-icon\\.png(?:\\?v=[0-9]{8}-[0-9]+)?#app-icon.png?v=${new_version}#g" \
+perl -0pi -e "s#(app-icon(?:-(?:light|dark))?\\.png)(?:\\?v=[0-9]{8}-[0-9]+)?#\${1}?v=${new_version}#g" \
   index.html privacy/index.html terms/index.html accessibility/index.html
 
-image_url="${SITE_URL%/}/assets/images/sendmoi/app-icon.png?v=${new_version}"
+image_url="${SITE_URL%/}/assets/images/sendmoi/app-icon-light.png?v=${new_version}"
 perl -0pi -e "s#<meta property=\"og:image\" content=\"[^\"]*\" />#<meta property=\"og:image\" content=\"${image_url}\" />#g" index.html
 perl -0pi -e "s#<meta property=\"og:image:secure_url\" content=\"[^\"]*\" />#<meta property=\"og:image:secure_url\" content=\"${image_url}\" />#g" index.html
 perl -0pi -e "s#<meta name=\"twitter:image\" content=\"[^\"]*\" />#<meta name=\"twitter:image\" content=\"${image_url}\" />#g" index.html

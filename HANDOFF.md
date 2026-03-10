@@ -4,14 +4,15 @@ Last updated: March 10, 2026
 
 ## Branch
 
-- `codex/update-text-gradients`
+- `codex/marketing-light-dark-icons`
 
 ## Current focus
 
-- Refreshing visual branding details on live pages:
-  - updated app icon art
-  - updated heading gradient stops
-- Keeping deployment/docs handoff aligned with active branch state
+- Standalone `send.moi` marketing site migration from `nieder.me/sendmoi`
+- Consistent local dev workflow (`make`, `make dev-live`, `.local` + LAN URLs)
+- Footer and support-contact consistency across all pages
+- Production deploy workflow for standalone `send.moi`
+- Final responsive polish before deploy / machine handoff
 
 ## What changed
 
@@ -61,17 +62,24 @@ Last updated: March 10, 2026
   - kept App Store badges centered in stacked states and left-aligned in the wider 2-column state
 - Refreshed icon cache-busting references across all pages:
   - `app-icon.png?v=20260307-1`
-- Refreshed app icon art in `assets/images/sendmoi/app-icon.png` and bumped references:
-  - `app-icon.png?v=20260310-1`
-- Updated heading gradients on all page hero titles to:
-  - `#2B7FFF` at `0%`
-  - `#8722FB` at `37%`
-  - `#9810FA` at `47%`
-  - `#8722FB` at `58%`
-  - `#6C3DFC` at `67%`
-  - `#2B7FFF` at `89%`
-- Created GitHub issue for this work:
-  - `#5` Update page icon art and heading gradient
+- Updated marketing app icon assets to separate light/dark variants sourced from iOS exports:
+  - added `assets/images/sendmoi/app-icon-light.png` (default/light)
+  - added `assets/images/sendmoi/app-icon-dark.png` (dark)
+  - refreshed `assets/images/sendmoi/app-icon.png` as the light fallback export
+  - homepage and policy/accessibility/terms hero icons now switch by theme (system preference + manual toggle)
+  - favicon tags now include a dark-mode icon variant (`media="(prefers-color-scheme: dark)"`)
+  - social preview metadata uses `app-icon-light.png`
+- Resynced the light/dark icon sources again from `/Users/niederme/~Repos/sendmoi/marketing/app-icons` and bumped live references to `v=20260309-2`
+- Adjusted the marketing color palette to match `/Users/niederme/~Repos/sendmoi/SendMoi/AppIcon.icon`:
+  - remapped primary blue/violet accent tokens to icon-aligned values
+  - updated gradient stops and accent rgba overlays on homepage + policy pages
+  - current text-gradient stops for homepage headline + policy/accessibility titles:
+    - `#2B7FFF` at `0%`
+    - `#8722FB` at `37%`
+    - `#9810FA` at `47%`
+    - `#8722FB` at `58%`
+    - `#6C3DFC` at `67%`
+    - `#2B7FFF` at `89%`
 - Added deploy scripts (based on `nieder.me` deploy flow, production-only):
   - `scripts/deploy.sh`
   - `scripts/set-site-url.sh`
@@ -89,7 +97,7 @@ Last updated: March 10, 2026
 ## Open items
 
 - Replace temporary App Store `href="#"` targets with live store URLs at launch.
-- Run final visual QA on desktop + iPhone Safari for icon rendering and heading-gradient consistency.
+- Run final visual QA on desktop + iPhone Safari for hero transition and footer spacing consistency.
 - Run `DRY_RUN=1 ./scripts/deploy.sh`, then production deploy once SSH access is available from the active machine.
 
 ## Local run
@@ -108,7 +116,7 @@ Last updated: March 10, 2026
 ## Resume checklist
 
 1. `git fetch --all`
-2. `git checkout codex/update-text-gradients`
+2. `git checkout codex/marketing-light-dark-icons`
 3. `git pull --ff-only`
 4. `make`
 5. Validate `/`, `/privacy/`, `/terms/`, `/accessibility/` in browser

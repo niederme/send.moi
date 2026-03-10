@@ -4,10 +4,11 @@ Last updated: March 10, 2026
 
 ## Branch
 
-- `codex/marketing-light-dark-icons`
+- `codex/rich-email-cards-copy`
 
 ## Current focus
 
+- Clarify homepage value messaging around link delivery as rich email cards
 - Standalone `send.moi` marketing site migration from `nieder.me/sendmoi`
 - Consistent local dev workflow (`make`, `make dev-live`, `.local` + LAN URLs)
 - Footer and support-contact consistency across all pages
@@ -16,6 +17,12 @@ Last updated: March 10, 2026
 
 ## What changed
 
+- Refined homepage value copy to emphasize rich email-card delivery:
+  - updated hero supporting line to `SendMoi sends links to Gmail as rich email cards, so they're easy to find and act on later.`
+  - synced the same line across `description`, `og:description`, and `twitter:description` in `index.html`
+- Bumped app icon cache-busting query strings to `v=20260310-1` across homepage and policy pages:
+  - updated favicon / apple-touch-icon and in-page icon references in `/`, `/privacy/`, `/terms/`, and `/accessibility/`
+  - updated homepage social preview image references (`og:image`, `og:image:secure_url`, `twitter:image`)
 - Reworked the landing-page hero messaging to match the App Store pairing:
   - title treatment remains `SendMoi`
   - hero headline now reads `Your inbox, in two taps.`
@@ -116,7 +123,7 @@ Last updated: March 10, 2026
 ## Resume checklist
 
 1. `git fetch --all`
-2. `git checkout codex/marketing-light-dark-icons`
+2. `git checkout codex/rich-email-cards-copy`
 3. `git pull --ff-only`
 4. `make`
 5. Validate `/`, `/privacy/`, `/terms/`, `/accessibility/` in browser

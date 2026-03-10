@@ -4,7 +4,7 @@ Last updated: March 10, 2026
 
 ## Branch
 
-- `codex/marketing-light-dark-icons`
+- `codex/update-text-gradients`
 
 ## Current focus
 
@@ -65,8 +65,11 @@ Last updated: March 10, 2026
   - `app-icon.png?v=20260310-1`
 - Updated heading gradients on all page hero titles to:
   - `#2B7FFF` at `0%`
-  - `#4D5DFE` at `45%`
-  - `#9810FA` at `100%`
+  - `#8722FB` at `37%`
+  - `#9810FA` at `47%`
+  - `#8722FB` at `58%`
+  - `#6C3DFC` at `67%`
+  - `#2B7FFF` at `89%`
 - Created GitHub issue for this work:
   - `#5` Update page icon art and heading gradient
 - Added deploy scripts (based on `nieder.me` deploy flow, production-only):
@@ -105,7 +108,7 @@ Last updated: March 10, 2026
 ## Resume checklist
 
 1. `git fetch --all`
-2. `git checkout codex/marketing-light-dark-icons`
+2. `git checkout codex/update-text-gradients`
 3. `git pull --ff-only`
 4. `make`
 5. Validate `/`, `/privacy/`, `/terms/`, `/accessibility/` in browser

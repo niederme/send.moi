@@ -18,7 +18,13 @@ Marketing site for SendMoi.
 - On narrow mobile viewports, the `Coming soon` App Store annotation is constrained to the card edge to avoid horizontal side-scroll.
 - The landing-page hero now collapses to a stacked layout earlier at mid-width breakpoints so the demo video can stay centered and effectively full-width.
 - App icon art was refreshed in March 2026; all page-level icon references now use `app-icon.png?v=20260310-1`.
-- Heading gradients for the homepage hero and policy/accessibility page titles now use `#2B7FFF` (0%), `#4D5DFE` (45%), and `#9810FA` (100%).
+- Heading gradients for the homepage hero and policy/accessibility page titles now use:
+  - `#2B7FFF` at `0%`
+  - `#8722FB` at `37%`
+  - `#9810FA` at `47%`
+  - `#8722FB` at `58%`
+  - `#6C3DFC` at `67%`
+  - `#2B7FFF` at `89%`
 - Feature visuals for `Your Gmail, kept private`, `Offline queue`, and `Recent recipients` are custom in-repo illustrations with matching light/dark PNG variants:
   - `assets/images/sendmoi/features/02-{Light,Dark}.png`
   - `assets/images/sendmoi/features/04-{Light,Dark}.png`

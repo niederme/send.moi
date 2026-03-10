@@ -17,6 +17,8 @@ Marketing site for SendMoi.
 
 - On narrow mobile viewports, the `Coming soon` App Store annotation is constrained to the card edge to avoid horizontal side-scroll.
 - The landing-page hero now collapses to a stacked layout earlier at mid-width breakpoints so the demo video can stay centered and effectively full-width.
+- App icon art was refreshed in March 2026; all page-level icon references now use `app-icon.png?v=20260310-1`.
+- Heading gradients for the homepage hero and policy/accessibility page titles now use `#2B7FFF` (0%), `#4D5DFE` (45%), and `#9810FA` (100%).
 
 ## Local dev
 

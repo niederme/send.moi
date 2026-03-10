@@ -73,6 +73,13 @@ Last updated: March 10, 2026
 - Adjusted the marketing color palette to match `/Users/niederme/~Repos/sendmoi/SendMoi/AppIcon.icon`:
   - remapped primary blue/violet accent tokens to icon-aligned values
   - updated gradient stops and accent rgba overlays on homepage + policy pages
+  - current text-gradient stops for homepage headline + policy/accessibility titles:
+    - `#2B7FFF` at `0%`
+    - `#8722FB` at `37%`
+    - `#9810FA` at `47%`
+    - `#8722FB` at `58%`
+    - `#6C3DFC` at `67%`
+    - `#2B7FFF` at `89%`
 - Added deploy scripts (based on `nieder.me` deploy flow, production-only):
   - `scripts/deploy.sh`
   - `scripts/set-site-url.sh`

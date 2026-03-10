@@ -22,6 +22,13 @@ Marketing site for SendMoi.
   - `assets/images/sendmoi/app-icon-dark.png`
   - `assets/images/sendmoi/app-icon.png` remains as a light fallback export
 - Brand accent colors across the site are synced to the app icon source palette from `SendMoi/AppIcon.icon` (blue/violet gradient family).
+- Homepage headline and policy/accessibility page title text gradients now use:
+  - `#2B7FFF` at `0%`
+  - `#8722FB` at `37%`
+  - `#9810FA` at `47%`
+  - `#8722FB` at `58%`
+  - `#6C3DFC` at `67%`
+  - `#2B7FFF` at `89%`
 - Feature visuals for `Your Gmail, kept private`, `Offline queue`, and `Recent recipients` are now custom in-repo illustrations with matching light/dark PNG variants:
   - `assets/images/sendmoi/features/02-{Light,Dark}.png`
   - `assets/images/sendmoi/features/04-{Light,Dark}.png`

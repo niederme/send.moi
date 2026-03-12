@@ -30,46 +30,55 @@ if [[ "$DRY_RUN" == "1" ]]; then
   RSYNC_ARGS+=(--dry-run)
 fi
 
-./scripts/set-site-url.sh "$SITE_URL"
+STAGING_DIR="$(mktemp -d "${TMPDIR:-/tmp}/send-moi-deploy.XXXXXX")"
+cleanup() {
+  rm -rf "$STAGING_DIR"
+}
+trap cleanup EXIT
 
-# Auto-bump icon cache-bust query string in all pages:
-# app-icon-light.png?v=YYYYMMDD-N and app-icon-dark.png?v=YYYYMMDD-N
-today="$(date +%Y%m%d)"
-existing_version="$(
-  grep -Eo 'app-icon-(light|dark)\.png\?v=[0-9]{8}-[0-9]+' index.html | head -n1 | sed -E 's#.*\?v=##' \
-    || grep -Eo 'app-icon\.png\?v=[0-9]{8}-[0-9]+' index.html | head -n1 | sed -E 's#.*\?v=##' \
-    || true
-)"
-next_seq=1
+cp index.html "$STAGING_DIR/"
+cp -R privacy "$STAGING_DIR/"
+cp -R terms "$STAGING_DIR/"
+cp -R accessibility "$STAGING_DIR/"
+cp -R assets "$STAGING_DIR/"
 
-if [[ "$existing_version" =~ ^([0-9]{8})-([0-9]+)$ ]]; then
-  existing_date="${BASH_REMATCH[1]}"
-  existing_seq="${BASH_REMATCH[2]}"
-  if [[ "$existing_date" == "$today" ]]; then
-    next_seq=$((10#$existing_seq + 1))
-  fi
-fi
+./scripts/set-site-url.sh "$SITE_URL" "$STAGING_DIR"
 
-new_version="${today}-${next_seq}"
+light_cache_bust="$(shasum -a 256 "$STAGING_DIR/assets/images/sendmoi/app-icon-light.png" | awk '{print substr($1, 1, 12)}')"
+dark_cache_bust="$(shasum -a 256 "$STAGING_DIR/assets/images/sendmoi/app-icon-dark.png" | awk '{print substr($1, 1, 12)}')"
+fallback_cache_bust="$(shasum -a 256 "$STAGING_DIR/assets/images/sendmoi/app-icon.png" | awk '{print substr($1, 1, 12)}')"
 
-perl -0pi -e "s#(app-icon(?:-(?:light|dark))?\\.png)(?:\\?v=[0-9]{8}-[0-9]+)?#\${1}?v=${new_version}#g" \
-  index.html privacy/index.html terms/index.html accessibility/index.html
+PAGE_FILES=(
+  "$STAGING_DIR/index.html"
+  "$STAGING_DIR/privacy/index.html"
+  "$STAGING_DIR/terms/index.html"
+  "$STAGING_DIR/accessibility/index.html"
+)
 
-image_url="${SITE_URL%/}/assets/images/sendmoi/app-icon-light.png?v=${new_version}"
-perl -0pi -e "s#<meta property=\"og:image\" content=\"[^\"]*\" />#<meta property=\"og:image\" content=\"${image_url}\" />#g" index.html
-perl -0pi -e "s#<meta property=\"og:image:secure_url\" content=\"[^\"]*\" />#<meta property=\"og:image:secure_url\" content=\"${image_url}\" />#g" index.html
-perl -0pi -e "s#<meta name=\"twitter:image\" content=\"[^\"]*\" />#<meta name=\"twitter:image\" content=\"${image_url}\" />#g" index.html
+perl -0pi -e "s#(app-icon-light\\.png)(?:\\?v=[^\"]+)?#\${1}?v=${light_cache_bust}#g" "${PAGE_FILES[@]}"
+perl -0pi -e "s#(app-icon-dark\\.png)(?:\\?v=[^\"]+)?#\${1}?v=${dark_cache_bust}#g" "${PAGE_FILES[@]}"
+perl -0pi -e "s#(app-icon\\.png)(?:\\?v=[^\"]+)?#\${1}?v=${fallback_cache_bust}#g" "${PAGE_FILES[@]}"
 
-echo "Using app icon cache-bust version: ${new_version}"
+image_url="${SITE_URL%/}/assets/images/sendmoi/app-icon-light.png?v=${light_cache_bust}"
+perl -0pi -e "s#<meta property=\"og:image\" content=\"[^\"]*\" />#<meta property=\"og:image\" content=\"${image_url}\" />#g" "$STAGING_DIR/index.html"
+perl -0pi -e "s#<meta property=\"og:image:secure_url\" content=\"[^\"]*\" />#<meta property=\"og:image:secure_url\" content=\"${image_url}\" />#g" "$STAGING_DIR/index.html"
+perl -0pi -e "s#<meta name=\"twitter:image\" content=\"[^\"]*\" />#<meta name=\"twitter:image\" content=\"${image_url}\" />#g" "$STAGING_DIR/index.html"
+
+echo "Using staged asset cache-bust versions: app-icon-light.png?v=${light_cache_bust}, app-icon-dark.png?v=${dark_cache_bust}, app-icon.png?v=${fallback_cache_bust}"
 
 REMOTE="${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_PATH%/}/"
 
 # Ensure remote target exists.
 ssh -p "$DEPLOY_PORT" "${DEPLOY_USER}@${DEPLOY_HOST}" "mkdir -p '${DEPLOY_PATH%/}'"
 
-# Sync site pages and assets.
+# Sync only the managed site paths from staging so deploy does not mutate
+# the working tree or depend on checked-in cache-bust versions.
 rsync "${RSYNC_ARGS[@]}" -e "ssh -p $DEPLOY_PORT" \
-  index.html privacy terms accessibility assets \
+  "$STAGING_DIR/index.html" \
+  "$STAGING_DIR/privacy" \
+  "$STAGING_DIR/terms" \
+  "$STAGING_DIR/accessibility" \
+  "$STAGING_DIR/assets" \
   "$REMOTE"
 
 echo "Deploy complete -> $REMOTE"

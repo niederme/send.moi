@@ -109,4 +109,4 @@ Override as needed, for example:
 DEPLOY_PATH=/home/suckahs/public_html/custom-sendmoi ./scripts/deploy.sh
 ```
 
-`deploy.sh` automatically updates cache-bust query strings for both `app-icon-light.png` and `app-icon-dark.png` across all pages.
+`deploy.sh` now stages a temporary deploy tree, updates canonical/social URLs there, and applies hash-based cache-bust query strings for `app-icon-light.png`, `app-icon-dark.png`, and `app-icon.png` without dirtying the working tree.

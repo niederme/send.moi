@@ -1,10 +1,10 @@
 # SendMoi Marketing Handoff
 
-Last updated: March 10, 2026
+Last updated: March 12, 2026
 
 ## Branch
 
-- `codex/rich-email-cards-copy`
+- `codex/issue-12-staged-deploy`
 
 ## Current focus
 
@@ -13,10 +13,16 @@ Last updated: March 10, 2026
 - Consistent local dev workflow (`make`, `make dev-live`, `.local` + LAN URLs)
 - Footer and support-contact consistency across all pages
 - Production deploy workflow for standalone `send.moi`
+- Keep deploy-specific cache busting out of tracked files so deploys do not dirty the branch
 - Final responsive polish before deploy / machine handoff
 
 ## What changed
 
+- Reworked deploy staging so deploy-specific rewrites do not dirty tracked files:
+  - `scripts/deploy.sh` now copies the site into a temporary staging directory before any rewrites
+  - canonical/social URL rewrites now target the staged pages instead of the working tree
+  - app-icon cache-busting is now hash-based per staged asset instead of date-sequence based in tracked HTML
+  - rsync now deploys the staged site paths, keeping local checked-in files unchanged after deploy
 - Refined homepage value copy to emphasize rich email-card delivery:
   - updated hero supporting line to `SendMoi sends links to Gmail as rich email cards, so they're easy to find and act on later.`
   - synced the same line across `description`, `og:description`, and `twitter:description` in `index.html`
@@ -105,7 +111,7 @@ Last updated: March 10, 2026
 
 - Replace temporary App Store `href="#"` targets with live store URLs at launch.
 - Run final visual QA on desktop + iPhone Safari for hero transition and footer spacing consistency.
-- Run `DRY_RUN=1 ./scripts/deploy.sh`, then production deploy once SSH access is available from the active machine.
+- Verify the staged deploy output with `DRY_RUN=1 ./scripts/deploy.sh`, then production deploy once SSH access is available from the active machine.
 
 ## Local run
 
@@ -123,7 +129,7 @@ Last updated: March 10, 2026
 ## Resume checklist
 
 1. `git fetch --all`
-2. `git checkout codex/rich-email-cards-copy`
+2. `git checkout codex/issue-12-staged-deploy`
 3. `git pull --ff-only`
 4. `make`
 5. Validate `/`, `/privacy/`, `/terms/`, `/accessibility/` in browser

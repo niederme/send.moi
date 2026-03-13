@@ -8,6 +8,7 @@
 - If you are on `main`, create or switch to a feature branch before making changes.
 - Do not treat `main` as a working branch for active development, unless told explicitly to.
 - Default workflow for non-trivial work: create a dedicated `git worktree` for each active feature branch/thread so multiple branches can stay in progress at once. For trivial one-off changes, a normal branch in the main checkout is fine.
+- For rendered site work in a worktree, start or reuse a preview server from that worktree when needed so in-flight edits can be reviewed there.
 - Do not push directly to `main`; all work happens on a task branch, unless told explicitly to.
 - Work from `main` on short-lived branches named `codex/*`.
 - Start from latest `main`:
@@ -16,6 +17,10 @@
   - `git checkout -b codex/<short-slug>`
 - For concurrent work, use separate branches and prefer separate worktrees:
   - `git worktree add ../<repo-name>-<short-slug> -b codex/<short-slug> main`
+- Port convention for previews:
+  - keep `8000` as the default root-checkout preview port
+  - use `make dev-thread` or `make dev-live-thread` inside worktrees; those start at `8001` and auto-cascade to `8002`, `8003`, and upward as needed
+- When you edit HTML, CSS, JS, or other rendered site files and a preview server is running for that thread, include the exact preview URL in your response.
 - Keep scope tight: branch changes should stay focused on the linked issue.
 
 ### 2) Implement And Commit
@@ -55,6 +60,7 @@
 - Treat messages prefixed with `BUG:` or `ISSUE:` as a request to create a GitHub issue directly.
 - Classify issue type and labels based on context (for example: `bug`, `enhancement`, `chore`) unless the user explicitly forces a type.
 - If the user includes a type hint inline (for example: `ISSUE: [bug] ...`), honor it.
+- When an issue is needed and no issue number is provided, do not ask which number to use. Look up the latest existing GitHub issue for this repo, create the next issue directly, and use the number GitHub assigns as the canonical reference.
 - If required details are missing, ask a short follow-up question before creating the issue. Otherwise, create it without an extra confirmation step.
 - If the user provides screenshots/videos, include them in the issue:
   - use existing URLs directly when available

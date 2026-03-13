@@ -1,23 +1,22 @@
 # SendMoi Marketing Handoff
 
-Last updated: March 12, 2026
+Last updated: March 13, 2026
 
 ## Branch
 
-- `codex/issue-12-staged-deploy`
+- `codex/policy-pages-update`
 
 ## Current focus
 
-- Clarify homepage value messaging around link delivery as rich email cards
-- Standalone `send.moi` marketing site migration from `nieder.me/sendmoi`
-- Consistent local dev workflow (`make`, `make dev-live`, `.local` + LAN URLs)
-- Footer and support-contact consistency across all pages
-- Production deploy workflow for standalone `send.moi`
-- Keep deploy-specific cache busting out of tracked files so deploys do not dirty the branch
-- Final responsive polish before deploy / machine handoff
+- Update privacy and terms pages to address Google policy feedback
+- Align the public support email across the site and docs
+- Keep the standalone `send.moi` marketing site documentation accurate for the active branch
 
 ## What changed
 
+- Expanded the privacy policy to better spell out Google account access, on-device storage, third-party requests, limited disclosure cases, and Google API Limited Use compliance language.
+- Expanded the terms of service with clearer Google-account responsibilities, acceptable-use restrictions, intellectual property language, termination terms, and governing-law language.
+- Updated support email references across the site and docs to `help@send.moi`.
 - Reworked deploy staging so deploy-specific rewrites do not dirty tracked files:
   - `scripts/deploy.sh` now copies the site into a temporary staging directory before any rewrites
   - canonical/social URL rewrites now target the staged pages instead of the working tree
@@ -61,7 +60,7 @@ Last updated: March 12, 2026
 - Updated app icon references with cache busting:
   - `app-icon.png?v=20260305-5`
 - Updated support email references:
-  - `help@mail.moi`
+  - `help@send.moi`
 - Footer refinements:
   - child-page footer moved outside the content card
   - child-page footer spacing and link styling aligned with homepage
@@ -129,7 +128,7 @@ Last updated: March 12, 2026
 ## Resume checklist
 
 1. `git fetch --all`
-2. `git checkout codex/issue-12-staged-deploy`
+2. `git checkout codex/policy-pages-update`
 3. `git pull --ff-only`
 4. `make`
 5. Validate `/`, `/privacy/`, `/terms/`, `/accessibility/` in browser

@@ -11,7 +11,7 @@ Marketing site for SendMoi.
 
 ## Support contact
 
-- Footer and policy pages use `help@mail.moi`
+- Footer and policy pages use `help@send.moi`
 
 ## UI notes
 

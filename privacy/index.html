@@ -472,73 +472,111 @@
         <div>
           <p class="eyebrow">SendMoi</p>
           <h1 id="privacy-title" class="gradient-title">Privacy Policy</h1>
-          <p class="subhead">Effective date: March 5, 2026</p>
+          <p class="subhead">Last updated: March 13, 2026</p>
         </div>
       </section>
 
       <section class="doc-shell">
-        <p class="lede">This Privacy Policy explains how <strong>SendMoi</strong> handles information when you use the app.</p>
+        <p class="lede">SendMoi is a local-first app that helps you send shared links as emails through your own Gmail account. This policy explains what SendMoi handles, where that data goes, and what stays on your device.</p>
 
-        <h2>Information SendMoi Handles</h2>
-        <p>SendMoi is designed to keep your data on your device whenever possible.</p>
+        <h2>What SendMoi Accesses</h2>
+        <p>SendMoi may access the following information when you use the app:</p>
         <ul>
-          <li><strong>Gmail account information:</strong> When you sign in with Google, SendMoi receives your Gmail email address and the OAuth tokens needed to keep you signed in and send email through your Gmail account.</li>
-          <li><strong>Content you provide:</strong> SendMoi handles the recipient, title, excerpt, and URL you enter in the app or share into the app through the Share Extension.</li>
-          <li><strong>Queued email data:</strong> If an email cannot be sent immediately, SendMoi stores the queued email locally on your device until it can retry.</li>
-          <li><strong>Saved preferences:</strong> SendMoi stores your default recipient and recent recipients locally so the app and Share Extension can reuse them.</li>
-          <li><strong>Support communications:</strong> If you contact us directly, we may receive your name, email address, and any information you include in your message.</li>
+          <li>Your Gmail account email address.</li>
+          <li>OAuth tokens used to keep you signed in to Gmail.</li>
+          <li>Email recipients you enter or save as defaults or recent recipients.</li>
+          <li>The title, excerpt, and URL of content you share into the app.</li>
+          <li>Queued email content that has not been sent yet.</li>
+        </ul>
+        <p>If you share a web link, SendMoi may also fetch the linked page and its preview image to improve the outgoing email with:</p>
+        <ul>
+          <li>A better title.</li>
+          <li>Excerpt text.</li>
+          <li>A short summary.</li>
+          <li>An inline preview image.</li>
         </ul>
 
-        <h2>How Information Is Used</h2>
-        <p>Any information handled by SendMoi is used only to:</p>
+        <h2>How Your Data Is Used</h2>
+        <p>SendMoi uses this information only to provide its core features:</p>
         <ul>
-          <li>sign you in with Google,</li>
-          <li>send email through the Gmail API on your behalf,</li>
-          <li>save and retry queued emails,</li>
-          <li>remember your default and recent recipients,</li>
-          <li>fetch page metadata or preview images for links you choose to share,</li>
-          <li>respond to support requests,</li>
-          <li>diagnose app issues when you report them, and</li>
-          <li>meet legal obligations if required.</li>
+          <li>Sign you in with Google.</li>
+          <li>Send email through the Gmail API on your behalf.</li>
+          <li>Remember your default and recent recipients.</li>
+          <li>Queue emails offline and retry them later.</li>
+          <li>Enrich shared links before sending when metadata is available.</li>
         </ul>
-
-        <h2>Google API Data and Scopes</h2>
-        <p>SendMoi only requests Google access needed to provide core app features. During Google sign-in, SendMoi requests Gmail send access and basic identity access so the app can keep you signed in to the correct account.</p>
-        <p>SendMoi does not use Google user data for advertising, profiling, data brokerage, or model training.</p>
-
-        <h2>Data Retention</h2>
-        <ul>
-          <li><strong>Google sign-in tokens:</strong> Stored locally in secure system storage until you sign out, revoke access, or remove the app.</li>
-          <li><strong>Queued email data:</strong> Stored locally until the message is sent, deleted, or app data is removed.</li>
-          <li><strong>Saved recipients:</strong> Stored locally until you change or clear them.</li>
-          <li><strong>Support communications:</strong> Retained only as long as needed to respond and resolve your request.</li>
-        </ul>
+        <p>SendMoi does not use your data for advertising, analytics, profiling, or sale to third parties.</p>
 
         <h2>Where Data Is Stored</h2>
-        <p>SendMoi stores app data locally on your device. Depending on the feature, this may include the system keychain, app storage, and shared app-group storage used by the SendMoi Share Extension.</p>
-        <p>SendMoi does not run its own backend service for account storage, syncing, analytics, or email delivery.</p>
+        <p>SendMoi stores data locally on your device, including:</p>
+        <ul>
+          <li>Gmail session information used to keep you signed in.</li>
+          <li>Your saved default and recent recipients.</li>
+          <li>Any queued emails waiting to be sent.</li>
+        </ul>
+        <p>This local storage may be kept in standard app storage, the system keychain, and shared app container storage used by the SendMoi Share Extension.</p>
 
         <h2>What Is Sent Off Your Device</h2>
-        <p>When SendMoi makes network requests, they are sent directly from your device to the services required for the feature you are using.</p>
+        <p>SendMoi does not run its own backend service. When network requests happen, they are sent directly from your device to the services needed for the feature you are using:</p>
         <ul>
-          <li><strong>Google:</strong> Used for authentication and Gmail delivery.</li>
-          <li><strong>Websites you share:</strong> If you share a link, SendMoi may request that page and its preview image to improve the email content.</li>
-          <li><strong>Apple platform services:</strong> SendMoi may use Apple system frameworks to run the app and, where available on your device, generate an on-device summary of shared article content.</li>
+          <li>Google authentication endpoints, to sign you in and refresh your Gmail session.</li>
+          <li>Gmail API endpoints, to send email through your Gmail account.</li>
+          <li>The websites you share, when SendMoi fetches page metadata or preview images to improve the outgoing email.</li>
         </ul>
-        <p>SendMoi does not sell your personal information and does not use your data for advertising or user profiling.</p>
+        <p>If summary generation is available on your device through Apple system frameworks, SendMoi may use those on-device capabilities to create a short article summary before sending. SendMoi does not send article text to a SendMoi-operated server for summarization.</p>
+
+        <h2>Third Parties</h2>
+        <p>SendMoi relies on third-party services only where necessary to provide the app:</p>
+        <ul>
+          <li>Google, for authentication and Gmail delivery.</li>
+          <li>The websites whose links you choose to share, for metadata and preview retrieval.</li>
+          <li>Apple system frameworks and platform services used to run the app and its Share Extension.</li>
+        </ul>
+        <p>Those services operate under their own privacy terms and policies.</p>
+
+        <h2>Sharing, Transfer, And Disclosure Of Google User Data</h2>
+        <p>SendMoi does not sell Google user data.</p>
+        <p>SendMoi does not share, transfer, or disclose Google user data to third parties except in the limited situations described below:</p>
+        <ul>
+          <li>To Google, when your device communicates directly with Google authentication endpoints and Gmail API endpoints to sign you in, refresh your session, identify the connected account, and send email you requested.</li>
+          <li>To the recipient you choose, when SendMoi sends an email from your Gmail account on your behalf.</li>
+          <li>To the websites whose links you choose to share, when your device fetches page metadata or preview images needed to build the outgoing email.</li>
+          <li>To Apple platform services used to run the app, the Share Extension, local storage, and on-device system capabilities.</li>
+          <li>When required by law, regulation, legal process, or enforceable governmental request.</li>
+          <li>When necessary to detect, prevent, or address fraud, security, or technical issues, or to protect the rights, property, or safety of users or the public.</li>
+        </ul>
+        <p>SendMoi does not operate its own backend for Google user data processing. Google user data is handled on your device and sent directly from your device to Google services needed for the feature you use.</p>
+        <p>The use of information received from Google APIs will adhere to the Google API Services User Data Policy, including the Limited Use requirements.</p>
+
+        <h2>How Google User Data Is Protected</h2>
+        <p>SendMoi uses the following protections for Google user data and other sensitive data:</p>
+        <ul>
+          <li>OAuth session data, including Gmail access and refresh tokens, is stored in the operating system keychain rather than in ordinary app preferences.</li>
+          <li>Network requests to Google authentication endpoints, Gmail API endpoints, and OpenID user info endpoints are sent over HTTPS.</li>
+          <li>Data stored on-device is kept inside the app sandbox or the app group container used by the SendMoi Share Extension.</li>
+          <li>SendMoi does not send Google user data to a SendMoi-operated backend server for storage, processing, analytics, or advertising.</li>
+          <li>Locally queued emails and recipient settings remain on the device unless and until you choose to send an email through your Gmail account.</li>
+          <li>Metadata retrieval uses direct requests from your device and disables HTTP cookie handling in the app's metadata-fetching session.</li>
+        </ul>
+        <p>No method of transmission or storage is perfectly secure, but SendMoi is designed to minimize the amount of Google user data it handles and to keep that data on-device wherever possible.</p>
 
         <h2>Your Choices</h2>
-        <p>You may stop using the app at any time. You can sign out inside the app, delete queued emails before they are sent, and change or clear your saved default recipient at any time.</p>
-        <p>You can also revoke SendMoi's Google access from your Google Account security settings (Third-party apps with account access). If you want to request deletion of support communications, contact us using the email address below.</p>
+        <p>You can control your data in several ways:</p>
+        <ul>
+          <li>Sign out of Gmail from within SendMoi to remove the saved Gmail session used by the app.</li>
+          <li>Delete queued emails from the app before they are sent.</li>
+          <li>Change or clear the default recipient at any time.</li>
+          <li>Stop sharing links into SendMoi if you do not want page metadata to be fetched.</li>
+        </ul>
 
-        <h2>Children’s Privacy</h2>
-        <p>SendMoi is not intended for children under 13, and we do not knowingly collect personal information from children under 13.</p>
+        <h2>Children's Privacy</h2>
+        <p>SendMoi is not directed to children under 13 and is not designed to knowingly collect personal information from children.</p>
 
-        <h2>Changes to This Policy</h2>
-        <p>This policy may be updated from time to time. When it changes, the effective date at the top of this page will be updated.</p>
+        <h2>Changes To This Policy</h2>
+        <p>This policy may be updated as SendMoi changes. The "Last updated" date at the top of this document reflects the latest revision.</p>
 
         <h2>Contact</h2>
-        <p>For privacy questions, contact <a href="mailto:&#104;&#101;&#108;&#112;&#64;&#109;&#97;&#105;&#108;&#46;&#109;&#111;&#105;">&#104;&#101;&#108;&#112;&#64;&#109;&#97;&#105;&#108;&#46;&#109;&#111;&#105;</a></p>
+        <p>For privacy questions, contact <a href="mailto:&#104;&#101;&#108;&#112;&#64;&#115;&#101;&#110;&#100;&#46;&#109;&#111;&#105;">&#104;&#101;&#108;&#112;&#64;&#115;&#101;&#110;&#100;&#46;&#109;&#111;&#105;</a></p>
 
       </section>
 
@@ -548,7 +586,7 @@
             <a href="https://nieder.me/">&copy; John Niedermeyer</a>
             <span aria-hidden="true"> | </span>
             Need help? Email
-            <a href="mailto:&#104;&#101;&#108;&#112;&#64;&#109;&#97;&#105;&#108;&#46;&#109;&#111;&#105;">&#104;&#101;&#108;&#112;&#64;&#109;&#97;&#105;&#108;&#46;&#109;&#111;&#105;</a>
+            <a href="mailto:&#104;&#101;&#108;&#112;&#64;&#115;&#101;&#110;&#100;&#46;&#109;&#111;&#105;">&#104;&#101;&#108;&#112;&#64;&#115;&#101;&#110;&#100;&#46;&#109;&#111;&#105;</a>
           </p>
         </div>
         <div class="footer-links">

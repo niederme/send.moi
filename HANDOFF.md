@@ -4,16 +4,22 @@ Last updated: March 13, 2026
 
 ## Branch
 
-- `codex/policy-pages-update`
+- `codex/agents-preview-rules`
 
 ## Current focus
 
-- Update privacy and terms pages to address Google policy feedback
-- Align the public support email across the site and docs
+- Refine repository instructions for worktree preview usage and issue creation defaults
 - Keep the standalone `send.moi` marketing site documentation accurate for the active branch
 
 ## What changed
 
+- Expanded `AGENTS.md` guidance for rendered-site work in worktrees:
+  - start or reuse a preview server from the active worktree when needed
+  - reserve port `8000` for the root checkout
+  - use `make dev-thread` / `make dev-live-thread` in worktrees, starting at `8001` and cascading upward
+  - include the exact preview URL in responses when a thread preview server is running
+- Updated issue-handling instructions in `AGENTS.md`:
+  - when an issue is needed and no number is provided, create the next GitHub issue directly instead of asking which number to use
 - Expanded the privacy policy to better spell out Google account access, on-device storage, third-party requests, limited disclosure cases, and Google API Limited Use compliance language.
 - Expanded the terms of service with clearer Google-account responsibilities, acceptable-use restrictions, intellectual property language, termination terms, and governing-law language.
 - Updated support email references across the site and docs to `help@send.moi`.
@@ -128,7 +134,7 @@ Last updated: March 13, 2026
 ## Resume checklist
 
 1. `git fetch --all`
-2. `git checkout codex/policy-pages-update`
+2. `git checkout codex/agents-preview-rules`
 3. `git pull --ff-only`
 4. `make`
 5. Validate `/`, `/privacy/`, `/terms/`, `/accessibility/` in browser

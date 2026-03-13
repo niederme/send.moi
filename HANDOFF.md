@@ -4,15 +4,19 @@ Last updated: March 13, 2026
 
 ## Branch
 
-- `codex/agents-preview-rules`
+- `codex/cache-bust-hotfix`
 
 ## Current focus
 
-- Refine repository instructions for worktree preview usage and issue creation defaults
+- Refresh app icon cache-busting references across the public site pages
 - Keep the standalone `send.moi` marketing site documentation accurate for the active branch
 
 ## What changed
 
+- Bumped app icon cache-busting query strings from `v=20260310-1` to `v=20260312-1` across homepage and child pages:
+  - updated favicon / apple-touch-icon references in `/`, `/privacy/`, `/terms/`, and `/accessibility/`
+  - updated homepage social preview image references (`og:image`, `og:image:secure_url`, `twitter:image`)
+  - updated visible theme-aware icon references on the homepage and child-page hero sections
 - Expanded `AGENTS.md` guidance for rendered-site work in worktrees:
   - start or reuse a preview server from the active worktree when needed
   - reserve port `8000` for the root checkout
@@ -134,7 +138,7 @@ Last updated: March 13, 2026
 ## Resume checklist
 
 1. `git fetch --all`
-2. `git checkout codex/agents-preview-rules`
+2. `git checkout codex/cache-bust-hotfix`
 3. `git pull --ff-only`
 4. `make`
 5. Validate `/`, `/privacy/`, `/terms/`, `/accessibility/` in browser

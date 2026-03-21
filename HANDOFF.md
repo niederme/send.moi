@@ -14,12 +14,10 @@ Last updated: March 21, 2026
 ## What changed
 
 - Repositioned the homepage around the everyday save-for-later flow:
-  - kept the existing brand lockup, headline, subheadline, and visual direction intact
-  - added a new `How it works` story block directly in the hero with the front-and-center loop:
-    - `1.` found something worth revisiting later
-    - `2.` two taps send it through Gmail
-    - `3.` done, with the link arriving as a rich email card
-  - reframed the setup card as `Set it up once in the Share Sheet` so setup reads as supporting detail rather than the main pitch
+  - restored the top of the page to the preferred legacy order: brand, headline, subheadline, store badges, and demo video
+  - moved `How it works` out of the hero and into a single full-width module below the fold
+  - simplified that module to a shorter 3-step horizontal story with lightweight visuals
+  - removed the lower secondary feature stack for now to keep the page focused
   - updated homepage `description`, `og:description`, and `twitter:description` to mention closing tabs and finding the link later
 - Bumped app icon cache-busting query strings from `v=20260310-1` to `v=20260312-1` across homepage and child pages:
   - updated favicon / apple-touch-icon references in `/`, `/privacy/`, `/terms/`, and `/accessibility/`

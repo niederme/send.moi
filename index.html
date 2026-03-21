@@ -342,104 +342,6 @@
         margin-top: 34px;
       }
 
-      .hero-flow {
-        display: grid;
-        gap: 18px;
-        max-width: 38rem;
-        margin-top: 30px;
-        padding: clamp(18px, 2.2vw, 24px);
-        border: 1px solid var(--line-strong);
-        border-radius: 30px;
-        background:
-          linear-gradient(180deg, rgba(255, 255, 255, 0.26), rgba(255, 255, 255, 0.08)),
-          var(--card);
-        backdrop-filter: blur(18px);
-        box-shadow: var(--shadow-md);
-      }
-
-      .hero-flow-header {
-        display: grid;
-        gap: 8px;
-      }
-
-      .hero-flow-title {
-        margin: 0;
-        color: var(--ink);
-        font-size: clamp(20px, 2vw, 26px);
-        line-height: 1.1;
-        font-weight: 700;
-        letter-spacing: -0.03em;
-      }
-
-      .hero-flow-subtitle {
-        margin: 0;
-        color: var(--muted);
-        font-size: clamp(15px, 1.2vw, 18px);
-        line-height: 1.5;
-        font-weight: 300;
-        text-wrap: pretty;
-      }
-
-      .hero-steps {
-        list-style: none;
-        display: grid;
-        gap: 0;
-        margin: 0;
-        padding: 0;
-      }
-
-      .hero-step {
-        display: grid;
-        grid-template-columns: auto minmax(0, 1fr);
-        gap: 14px;
-        align-items: start;
-      }
-
-      .hero-step + .hero-step {
-        margin-top: 14px;
-        padding-top: 14px;
-        border-top: 1px solid var(--line);
-      }
-
-      .hero-step-number {
-        display: grid;
-        place-items: center;
-        width: 34px;
-        height: 34px;
-        border-radius: 999px;
-        background: linear-gradient(135deg, var(--blue), var(--violet));
-        color: #f8fbff;
-        font-size: 13px;
-        line-height: 1;
-        font-weight: 700;
-        box-shadow: 0 10px 20px rgba(43, 127, 255, 0.2);
-      }
-
-      .hero-step-body {
-        display: grid;
-        gap: 4px;
-        min-width: 0;
-      }
-
-      .hero-step-title {
-        margin: 0;
-        color: var(--ink);
-        font-size: clamp(18px, 1.8vw, 24px);
-        line-height: 1.12;
-        font-weight: 700;
-        letter-spacing: -0.025em;
-        text-wrap: balance;
-      }
-
-      .hero-step-copy {
-        margin: 0;
-        color: var(--muted);
-        font-size: clamp(15px, 1.2vw, 17px);
-        line-height: 1.5;
-        font-weight: 300;
-        text-wrap: pretty;
-      }
-
       .hero-copy p,
       .footer-meta p,
       .value-copy p {
@@ -655,6 +557,147 @@
       .feature-stack {
         display: grid;
         gap: 24px;
+      }
+
+      .how-it-works-module {
+        gap: 18px;
+      }
+
+      .how-it-works-header {
+        max-width: 56rem;
+      }
+
+      .how-it-works-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .how-step-card {
+        gap: 14px;
+        min-width: 0;
+      }
+
+      .how-step-head {
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr);
+        gap: 12px;
+        align-items: center;
+      }
+
+      .how-step-number {
+        display: grid;
+        place-items: center;
+        width: 32px;
+        height: 32px;
+        border-radius: 999px;
+        background: linear-gradient(135deg, var(--blue), var(--violet));
+        color: #f8fbff;
+        font-size: 13px;
+        line-height: 1;
+        font-weight: 700;
+        box-shadow: 0 10px 20px rgba(43, 127, 255, 0.18);
+      }
+
+      .how-step-title {
+        margin: 0;
+        color: var(--ink);
+        font-size: clamp(20px, 1.7vw, 24px);
+        line-height: 1.12;
+        font-weight: 700;
+        letter-spacing: -0.025em;
+        text-wrap: balance;
+      }
+
+      .how-step-copy {
+        margin: 0;
+        color: var(--muted);
+        font-size: 15px;
+        line-height: 1.45;
+        font-weight: 300;
+        text-wrap: pretty;
+      }
+
+      .how-step-media {
+        min-height: 214px;
+        background:
+          radial-gradient(circle at 24% 18%, rgba(43, 127, 255, 0.16), transparent 28%),
+          radial-gradient(circle at 76% 84%, rgba(152, 16, 250, 0.14), transparent 28%),
+          rgba(255, 255, 255, 0.04);
+      }
+
+      .how-step-media .feature-image {
+        object-fit: contain;
+        object-position: center;
+      }
+
+      .how-step-media--share {
+        padding: 10px;
+      }
+
+      .how-step-media--share .feature-image {
+        border-radius: 14px;
+      }
+
+      .how-step-media--email {
+        padding: 12px;
+      }
+
+      .how-step-media--email .feature-image {
+        border-radius: 16px;
+      }
+
+      .tab-stack {
+        position: relative;
+        height: 100%;
+        min-height: 214px;
+        padding: 20px;
+      }
+
+      .tab-card {
+        position: absolute;
+        left: 20px;
+        right: 20px;
+        display: grid;
+        gap: 4px;
+        padding: 14px 16px;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background:
+          linear-gradient(180deg, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0.08)),
+          var(--card-solid);
+        box-shadow: var(--shadow-md);
+      }
+
+      .tab-card span {
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 1.2;
+        font-weight: 400;
+      }
+
+      .tab-card strong {
+        color: var(--ink);
+        font-size: 16px;
+        line-height: 1.2;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+      }
+
+      .tab-card--back {
+        top: 54px;
+        transform: rotate(-5deg);
+        opacity: 0.62;
+      }
+
+      .tab-card--mid {
+        top: 32px;
+        transform: rotate(2deg);
+        opacity: 0.82;
+      }
+
+      .tab-card--front {
+        top: 76px;
       }
 
       .feature-module {
@@ -1249,6 +1292,10 @@
           grid-template-columns: 1fr;
         }
 
+        .how-it-works-grid {
+          grid-template-columns: 1fr;
+        }
+
         .feature-item--full {
           grid-template-columns: 1fr;
         }
@@ -1298,11 +1345,6 @@
         .hero-copy p {
           max-width: 34ch;
           font-size: clamp(16px, 1.95vw, 19px);
-        }
-
-        .hero-flow {
-          margin-top: 24px;
-          padding: 18px;
         }
 
         .device-shell {
@@ -1407,28 +1449,13 @@
           margin-top: 22px;
         }
 
-        .hero-flow {
-          margin-top: 22px;
-          padding: 16px;
-          border-radius: 24px;
+        .how-it-works-grid {
+          grid-template-columns: 1fr;
         }
 
-        .hero-flow-title {
-          font-size: clamp(20px, 5.5vw, 24px);
-        }
-
-        .hero-step {
-          gap: 12px;
-        }
-
-        .hero-step-number {
-          width: 30px;
-          height: 30px;
-          font-size: 12px;
-        }
-
-        .hero-step-title {
-          font-size: clamp(18px, 5vw, 22px);
+        .how-step-media,
+        .tab-stack {
+          min-height: 180px;
         }
 
         .hero-download .store-actions--coming-soon {
@@ -1590,38 +1617,6 @@
             </p>
           </div>
 
-          <section class="hero-flow" aria-labelledby="hero-flow-title">
-            <div class="hero-flow-header">
-              <p class="eyebrow">How it works</p>
-              <h2 class="hero-flow-title" id="hero-flow-title">The whole point: save it for later without keeping 1,000 tabs open.</h2>
-              <p class="hero-flow-subtitle">Set up SendMoi once in the Share Sheet, then every link follows the same quick loop.</p>
-            </div>
-
-            <ol class="hero-steps">
-              <li class="hero-step">
-                <span class="hero-step-number" aria-hidden="true">1</span>
-                <div class="hero-step-body">
-                  <p class="hero-step-title">Found a cool thing you want to revisit later.</p>
-                  <p class="hero-step-copy">Instead of leaving the tab hanging around, share it the moment you see it.</p>
-                </div>
-              </li>
-              <li class="hero-step">
-                <span class="hero-step-number" aria-hidden="true">2</span>
-                <div class="hero-step-body">
-                  <p class="hero-step-title">Two taps send it through Gmail.</p>
-                  <p class="hero-step-copy">Open the share sheet, tap SendMoi, and let your own Gmail account send the link.</p>
-                </div>
-              </li>
-              <li class="hero-step">
-                <span class="hero-step-number" aria-hidden="true">3</span>
-                <div class="hero-step-body">
-                  <p class="hero-step-title">Done.</p>
-                  <p class="hero-step-copy">It lands as a rich email card that is easy to find later on phone or desktop.</p>
-                </div>
-              </li>
-            </ol>
-          </section>
-
           <div class="hero-download">
             <div class="store-actions store-actions--coming-soon" aria-label="SendMoi hero store buttons (coming soon)">
               <span class="coming-soon-mark" aria-hidden="true">
@@ -1682,155 +1677,79 @@
         </section>
       </section>
 
-      <section class="value-strip" aria-label="SendMoi features">
+      <section class="value-strip" aria-labelledby="workflow-title">
         <div class="feature-stack">
-          <div class="feature-grid feature-grid--top">
-            <article class="feature-module" aria-labelledby="setup-title">
-              <header class="feature-module-header">
-                <p class="eyebrow">One-time setup</p>
-                <h3 class="feature-module-title" id="setup-title">Set it up once in the Share Sheet</h3>
-                <p class="feature-module-subtitle">Do this once, and the two-tap flow is ready every time you share a link.</p>
-              </header>
-              <div class="feature-carousel" data-share-carousel>
-                <article class="feature-carousel-slide is-active" data-share-slide>
-                  <div class="feature-media">
-                    <img
-                      class="feature-image"
-                      src="./assets/images/sendmoi/features/share-setup-step-1.png"
-                      alt="iOS share sheet showing the More app option highlighted."
-                      loading="lazy"
-                      decoding="async"
-                    />
-                  </div>
-                  <h4>1. Open Share and tap More</h4>
-                  <p>From the first app row in the share sheet, open More to edit your app list.</p>
-                </article>
-                <article class="feature-carousel-slide" data-share-slide hidden>
-                  <div class="feature-media">
-                    <img
-                      class="feature-image"
-                      src="./assets/images/sendmoi/features/share-setup-step-2.png"
-                      alt="iOS Apps list with SendMoi plus button and toggle highlighted."
-                      loading="lazy"
-                      decoding="async"
-                    />
-                  </div>
-                  <h4>2. Add SendMoi to Favorites</h4>
-                  <p>Tap the green plus next to SendMoi so it appears in Favorites.</p>
-                </article>
-                <article class="feature-carousel-slide" data-share-slide hidden>
-                  <div class="feature-media">
-                    <img
-                      class="feature-image"
-                      src="./assets/images/sendmoi/features/share-setup-step-3.png"
-                      alt="iOS Apps list with SendMoi in Favorites and toggle enabled."
-                      loading="lazy"
-                      decoding="async"
-                    />
-                  </div>
-                  <h4>3. Keep SendMoi enabled</h4>
-                  <p>Make sure SendMoi stays toggled on, then tap Done.</p>
-                </article>
-                <div class="feature-carousel-nav">
-                  <button class="feature-carousel-btn" type="button" data-share-prev aria-label="Show previous setup step">Prev</button>
-                  <div class="feature-carousel-dots" role="tablist" aria-label="Share setup steps">
-                    <button class="feature-carousel-dot is-active" type="button" data-share-dot="0" role="tab" aria-selected="true" aria-label="Show setup step 1"></button>
-                    <button class="feature-carousel-dot" type="button" data-share-dot="1" role="tab" aria-selected="false" aria-label="Show setup step 2"></button>
-                    <button class="feature-carousel-dot" type="button" data-share-dot="2" role="tab" aria-selected="false" aria-label="Show setup step 3"></button>
-                  </div>
-                  <button class="feature-carousel-btn" type="button" data-share-next aria-label="Show next setup step">Next</button>
-                </div>
-              </div>
-            </article>
-
-            <article class="feature-item">
-              <div class="feature-media">
-                <img
-                  class="feature-image feature-image--light"
-                  src="./assets/images/sendmoi/features/02-Light.png"
-                  alt="SendMoi app controls inside iOS sharing settings."
-                  loading="lazy"
-                  decoding="async"
-                />
-                <img
-                  class="feature-image feature-image--dark"
-                  src="./assets/images/sendmoi/features/02-Dark.png"
-                  alt="SendMoi app controls inside iOS sharing settings."
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
-              <h3>Your Gmail, kept private</h3>
-              <p>SendMoi uses your own Gmail account and stays local-first, with no backend storing your session, recipients, or queued sends.</p>
-            </article>
-          </div>
-
-          <article class="feature-item feature-item--readable">
-            <header class="feature-item-header">
-              <p class="eyebrow">Readable</p>
-              <h3 class="feature-module-title">Readable when it lands</h3>
-              <p class="feature-module-subtitle">The result is easy to scan: a clean subject, useful context, and a source link that still feels good on both phone and desktop.</p>
+          <article class="feature-module how-it-works-module" aria-labelledby="workflow-title">
+            <header class="feature-module-header how-it-works-header">
+              <p class="eyebrow">How it works</p>
+              <h2 class="feature-module-title" id="workflow-title">Save the link. Close the tab. Move on.</h2>
+              <p class="feature-module-subtitle">Once SendMoi is in your Share Sheet, this is the whole loop.</p>
             </header>
-            <div class="feature-media">
-              <img
-                class="feature-image feature-image--light"
-                src="./assets/images/sendmoi/features/03-Light.png"
-                alt="SendMoi formatted email preview."
-                loading="lazy"
-                decoding="async"
-              />
-              <img
-                class="feature-image feature-image--dark"
-                src="./assets/images/sendmoi/features/03-Dark.png"
-                alt="SendMoi formatted email preview."
-                loading="lazy"
-                decoding="async"
-              />
+
+            <div class="how-it-works-grid">
+              <article class="feature-item how-step-card">
+                <div class="how-step-head">
+                  <span class="how-step-number" aria-hidden="true">1</span>
+                  <h3 class="how-step-title">Found something worth saving.</h3>
+                </div>
+                <div class="feature-media how-step-media">
+                  <div class="tab-stack" aria-hidden="true">
+                    <div class="tab-card tab-card--back">
+                      <span>Article</span>
+                      <strong>Read this later</strong>
+                    </div>
+                    <div class="tab-card tab-card--mid">
+                      <span>Recipe</span>
+                      <strong>Make this this weekend</strong>
+                    </div>
+                    <div class="tab-card tab-card--front">
+                      <span>Place</span>
+                      <strong>Try this spot</strong>
+                    </div>
+                  </div>
+                </div>
+                <p class="how-step-copy">Share it now instead of leaving another tab open.</p>
+              </article>
+
+              <article class="feature-item how-step-card">
+                <div class="how-step-head">
+                  <span class="how-step-number" aria-hidden="true">2</span>
+                  <h3 class="how-step-title">Two taps send it with Gmail.</h3>
+                </div>
+                <div class="feature-media how-step-media how-step-media--share">
+                  <img
+                    class="feature-image"
+                    src="./assets/images/sendmoi/features/share-setup-step-1.png"
+                    alt="iPhone share sheet with SendMoi ready to be used."
+                    decoding="async"
+                  />
+                </div>
+                <p class="how-step-copy">Open Share, tap SendMoi, and let your own account handle it.</p>
+              </article>
+
+              <article class="feature-item how-step-card">
+                <div class="how-step-head">
+                  <span class="how-step-number" aria-hidden="true">3</span>
+                  <h3 class="how-step-title">Done.</h3>
+                </div>
+                <div class="feature-media how-step-media how-step-media--email">
+                  <img
+                    class="feature-image feature-image--light"
+                    src="./assets/images/sendmoi/features/03-Light.png"
+                    alt="Rich Gmail card created by SendMoi."
+                    decoding="async"
+                  />
+                  <img
+                    class="feature-image feature-image--dark"
+                    src="./assets/images/sendmoi/features/03-Dark.png"
+                    alt="Rich Gmail card created by SendMoi."
+                    decoding="async"
+                  />
+                </div>
+                <p class="how-step-copy">It lands as a clean email card you can find later on any device.</p>
+              </article>
             </div>
           </article>
-
-          <div class="feature-grid">
-            <article class="feature-item">
-              <div class="feature-media">
-                <img
-                  class="feature-image feature-image--light"
-                  src="./assets/images/sendmoi/features/04-Light.png"
-                  alt="SendMoi offline queue marketing image"
-                  loading="lazy"
-                  decoding="async"
-                />
-                <img
-                  class="feature-image feature-image--dark"
-                  src="./assets/images/sendmoi/features/04-Dark.png"
-                  alt="SendMoi offline queue marketing image"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
-              <h3>Offline queue</h3>
-              <p>If the network is flaky, the send is not dropped. SendMoi keeps it in a local queue and retries when the app wakes up or connectivity returns.</p>
-            </article>
-            <article class="feature-item">
-              <div class="feature-media">
-                <img
-                  class="feature-image feature-image--light"
-                  src="./assets/images/sendmoi/features/05-Light.png"
-                  alt="SendMoi recent recipients marketing image"
-                  loading="lazy"
-                  decoding="async"
-                />
-                <img
-                  class="feature-image feature-image--dark"
-                  src="./assets/images/sendmoi/features/05-Dark.png"
-                  alt="SendMoi recent recipients marketing image"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
-              <h3>Recent recipients</h3>
-              <p>Keep a default recipient ready, then switch fast with recent-recipient shortcuts when something needs to go somewhere else.</p>
-            </article>
-          </div>
         </div>
       </section>
 
@@ -2023,59 +1942,6 @@
           });
         }
 
-        const shareCarousel = document.querySelector("[data-share-carousel]");
-
-        if (shareCarousel) {
-          const slides = Array.from(shareCarousel.querySelectorAll("[data-share-slide]"));
-          const dots = Array.from(shareCarousel.querySelectorAll("[data-share-dot]"));
-          const prevButton = shareCarousel.querySelector("[data-share-prev]");
-          const nextButton = shareCarousel.querySelector("[data-share-next]");
-          let activeIndex = slides.findIndex((slide) => slide.classList.contains("is-active"));
-
-          if (activeIndex < 0) {
-            activeIndex = 0;
-          }
-
-          const setSlide = (nextIndex) => {
-            if (!slides.length) {
-              return;
-            }
-
-            activeIndex = (nextIndex + slides.length) % slides.length;
-
-            slides.forEach((slide, index) => {
-              const isActive = index === activeIndex;
-              slide.classList.toggle("is-active", isActive);
-              slide.hidden = !isActive;
-            });
-
-            dots.forEach((dot, index) => {
-              const isActive = index === activeIndex;
-              dot.classList.toggle("is-active", isActive);
-              dot.setAttribute("aria-selected", isActive ? "true" : "false");
-            });
-          };
-
-          if (prevButton) {
-            prevButton.addEventListener("click", () => {
-              setSlide(activeIndex - 1);
-            });
-          }
-
-          if (nextButton) {
-            nextButton.addEventListener("click", () => {
-              setSlide(activeIndex + 1);
-            });
-          }
-
-          dots.forEach((dot, index) => {
-            dot.addEventListener("click", () => {
-              setSlide(index);
-            });
-          });
-
-          setSlide(activeIndex);
-        }
       })();
     </script>
   </body>

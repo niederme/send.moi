@@ -562,6 +562,47 @@
         max-width: 56rem;
       }
 
+      .questions-module {
+        gap: 18px;
+      }
+
+      .questions-header {
+        max-width: 54rem;
+      }
+
+      .question-grid {
+        gap: 18px;
+      }
+
+      .question-card {
+        gap: 10px;
+        align-content: start;
+      }
+
+      .question-kicker {
+        margin: 0;
+        color: var(--blue);
+        font-size: 12px;
+        line-height: 1;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .question-card h3 {
+        margin: 0;
+        color: var(--ink);
+        font-size: clamp(22px, 2.1vw, 28px);
+        line-height: 1.12;
+        font-weight: 700;
+        letter-spacing: -0.03em;
+        text-wrap: balance;
+      }
+
+      .question-card p:last-child {
+        max-width: 34ch;
+      }
+
       .how-it-works-grid {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1742,6 +1783,44 @@
                   />
                 </div>
                 <p class="how-step-copy">It lands as a clean email card that's easy to find later on any device.</p>
+              </article>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="value-strip" aria-labelledby="questions-title">
+        <div class="feature-stack">
+          <article class="feature-module questions-module" aria-labelledby="questions-title">
+            <header class="feature-module-header questions-header">
+              <p class="eyebrow">Questions people have</p>
+              <h2 class="feature-module-title" id="questions-title">Private by default. Simple to use.</h2>
+              <p class="feature-module-subtitle">If you're wondering what account it uses, what it needs, or what it keeps, here's the short version.</p>
+            </header>
+
+            <div class="feature-grid question-grid">
+              <article class="feature-item question-card">
+                <p class="question-kicker">Account</p>
+                <h3>Does it use my Gmail account?</h3>
+                <p>Yes. SendMoi sends through your own Gmail account, not a SendMoi inbox or forwarding service.</p>
+              </article>
+
+              <article class="feature-item question-card">
+                <p class="question-kicker">Privacy</p>
+                <h3>What does SendMoi store?</h3>
+                <p>SendMoi is local-first. It does not use a backend to store your Gmail session, recipients, or queued sends.</p>
+              </article>
+
+              <article class="feature-item question-card">
+                <p class="question-kicker">Requirements</p>
+                <h3>What do I need to use it?</h3>
+                <p>You need an iPhone or iPad, a Gmail account, and one quick setup step to add SendMoi to the Share Sheet.</p>
+              </article>
+
+              <article class="feature-item question-card">
+                <p class="question-kicker">Sending</p>
+                <h3>Do I need to be online when I share?</h3>
+                <p>If you share while offline, SendMoi can queue the send locally and retry later when your device is back online.</p>
               </article>
             </div>
           </article>

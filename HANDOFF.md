@@ -17,7 +17,7 @@ Last updated: March 21, 2026
   - restored the top of the page to the preferred legacy order: brand, headline, subheadline, store badges, and demo video
   - moved `How it works` out of the hero and into a single full-width module below the fold
   - simplified that module to a shorter 3-step horizontal story with lightweight visuals
-  - removed the lower secondary feature stack for now to keep the page focused
+  - replaced the removed lower feature stack with a concise reassurance section covering likely questions about privacy, account usage, requirements, and offline sending
   - updated homepage `description`, `og:description`, and `twitter:description` to mention closing tabs and finding the link later
 - Bumped app icon cache-busting query strings from `v=20260310-1` to `v=20260312-1` across homepage and child pages:
   - updated favicon / apple-touch-icon references in `/`, `/privacy/`, `/terms/`, and `/accessibility/`

@@ -7,7 +7,7 @@
     <title>SendMoi | Your inbox, in two taps</title>
     <meta
       name="description"
-      content="SendMoi sends links to Gmail as rich email cards, so they're easy to find and act on later."
+      content="Found something cool? SendMoi sends links to Gmail as rich email cards in two taps, so you can close the tab and find it later."
     />
     <link rel="canonical" href="https://send.moi/" />
     <link rel="icon" type="image/png" href="./assets/images/sendmoi/app-icon-light.png?v=20260312-1" />
@@ -19,7 +19,7 @@
     <meta property="og:title" content="SendMoi | Your inbox, in two taps" />
     <meta
       property="og:description"
-      content="SendMoi sends links to Gmail as rich email cards, so they're easy to find and act on later."
+      content="Found something cool? SendMoi sends links to Gmail as rich email cards in two taps, so you can close the tab and find it later."
     />
     <meta property="og:url" content="https://send.moi/" />
     <meta property="og:site_name" content="John Niedermeyer" />
@@ -34,7 +34,7 @@
     <meta name="twitter:title" content="SendMoi | Your inbox, in two taps" />
     <meta
       name="twitter:description"
-      content="SendMoi sends links to Gmail as rich email cards, so they're easy to find and act on later."
+      content="Found something cool? SendMoi sends links to Gmail as rich email cards in two taps, so you can close the tab and find it later."
     />
     <meta name="twitter:url" content="https://send.moi/" />
     <meta name="twitter:image" content="https://send.moi/assets/images/sendmoi/app-icon-light.png?v=20260312-1" />
@@ -340,6 +340,104 @@
 
       .hero-download {
         margin-top: 34px;
+      }
+
+      .hero-flow {
+        display: grid;
+        gap: 18px;
+        max-width: 38rem;
+        margin-top: 30px;
+        padding: clamp(18px, 2.2vw, 24px);
+        border: 1px solid var(--line-strong);
+        border-radius: 30px;
+        background:
+          linear-gradient(180deg, rgba(255, 255, 255, 0.26), rgba(255, 255, 255, 0.08)),
+          var(--card);
+        backdrop-filter: blur(18px);
+        box-shadow: var(--shadow-md);
+      }
+
+      .hero-flow-header {
+        display: grid;
+        gap: 8px;
+      }
+
+      .hero-flow-title {
+        margin: 0;
+        color: var(--ink);
+        font-size: clamp(20px, 2vw, 26px);
+        line-height: 1.1;
+        font-weight: 700;
+        letter-spacing: -0.03em;
+      }
+
+      .hero-flow-subtitle {
+        margin: 0;
+        color: var(--muted);
+        font-size: clamp(15px, 1.2vw, 18px);
+        line-height: 1.5;
+        font-weight: 300;
+        text-wrap: pretty;
+      }
+
+      .hero-steps {
+        list-style: none;
+        display: grid;
+        gap: 0;
+        margin: 0;
+        padding: 0;
+      }
+
+      .hero-step {
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr);
+        gap: 14px;
+        align-items: start;
+      }
+
+      .hero-step + .hero-step {
+        margin-top: 14px;
+        padding-top: 14px;
+        border-top: 1px solid var(--line);
+      }
+
+      .hero-step-number {
+        display: grid;
+        place-items: center;
+        width: 34px;
+        height: 34px;
+        border-radius: 999px;
+        background: linear-gradient(135deg, var(--blue), var(--violet));
+        color: #f8fbff;
+        font-size: 13px;
+        line-height: 1;
+        font-weight: 700;
+        box-shadow: 0 10px 20px rgba(43, 127, 255, 0.2);
+      }
+
+      .hero-step-body {
+        display: grid;
+        gap: 4px;
+        min-width: 0;
+      }
+
+      .hero-step-title {
+        margin: 0;
+        color: var(--ink);
+        font-size: clamp(18px, 1.8vw, 24px);
+        line-height: 1.12;
+        font-weight: 700;
+        letter-spacing: -0.025em;
+        text-wrap: balance;
+      }
+
+      .hero-step-copy {
+        margin: 0;
+        color: var(--muted);
+        font-size: clamp(15px, 1.2vw, 17px);
+        line-height: 1.5;
+        font-weight: 300;
+        text-wrap: pretty;
       }
 
       .hero-copy p,
@@ -1202,6 +1300,11 @@
           font-size: clamp(16px, 1.95vw, 19px);
         }
 
+        .hero-flow {
+          margin-top: 24px;
+          padding: 18px;
+        }
+
         .device-shell {
           width: min(100%, clamp(220px, 30vw, 292px));
         }
@@ -1302,6 +1405,30 @@
 
         .hero-download {
           margin-top: 22px;
+        }
+
+        .hero-flow {
+          margin-top: 22px;
+          padding: 16px;
+          border-radius: 24px;
+        }
+
+        .hero-flow-title {
+          font-size: clamp(20px, 5.5vw, 24px);
+        }
+
+        .hero-step {
+          gap: 12px;
+        }
+
+        .hero-step-number {
+          width: 30px;
+          height: 30px;
+          font-size: 12px;
+        }
+
+        .hero-step-title {
+          font-size: clamp(18px, 5vw, 22px);
         }
 
         .hero-download .store-actions--coming-soon {
@@ -1463,6 +1590,38 @@
             </p>
           </div>
 
+          <section class="hero-flow" aria-labelledby="hero-flow-title">
+            <div class="hero-flow-header">
+              <p class="eyebrow">How it works</p>
+              <h2 class="hero-flow-title" id="hero-flow-title">The whole point: save it for later without keeping 1,000 tabs open.</h2>
+              <p class="hero-flow-subtitle">Set up SendMoi once in the Share Sheet, then every link follows the same quick loop.</p>
+            </div>
+
+            <ol class="hero-steps">
+              <li class="hero-step">
+                <span class="hero-step-number" aria-hidden="true">1</span>
+                <div class="hero-step-body">
+                  <p class="hero-step-title">Found a cool thing you want to revisit later.</p>
+                  <p class="hero-step-copy">Instead of leaving the tab hanging around, share it the moment you see it.</p>
+                </div>
+              </li>
+              <li class="hero-step">
+                <span class="hero-step-number" aria-hidden="true">2</span>
+                <div class="hero-step-body">
+                  <p class="hero-step-title">Two taps send it through Gmail.</p>
+                  <p class="hero-step-copy">Open the share sheet, tap SendMoi, and let your own Gmail account send the link.</p>
+                </div>
+              </li>
+              <li class="hero-step">
+                <span class="hero-step-number" aria-hidden="true">3</span>
+                <div class="hero-step-body">
+                  <p class="hero-step-title">Done.</p>
+                  <p class="hero-step-copy">It lands as a rich email card that is easy to find later on phone or desktop.</p>
+                </div>
+              </li>
+            </ol>
+          </section>
+
           <div class="hero-download">
             <div class="store-actions store-actions--coming-soon" aria-label="SendMoi hero store buttons (coming soon)">
               <span class="coming-soon-mark" aria-hidden="true">
@@ -1528,9 +1687,9 @@
           <div class="feature-grid feature-grid--top">
             <article class="feature-module" aria-labelledby="setup-title">
               <header class="feature-module-header">
-                <p class="eyebrow">Share setup</p>
-                <h3 class="feature-module-title" id="setup-title">Set up SendMoi in the Share Sheet</h3>
-                <p class="feature-module-subtitle">Do this once, and SendMoi is always available when you share a link.</p>
+                <p class="eyebrow">One-time setup</p>
+                <h3 class="feature-module-title" id="setup-title">Set it up once in the Share Sheet</h3>
+                <p class="feature-module-subtitle">Do this once, and the two-tap flow is ready every time you share a link.</p>
               </header>
               <div class="feature-carousel" data-share-carousel>
                 <article class="feature-carousel-slide is-active" data-share-slide>

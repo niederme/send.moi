@@ -96,17 +96,17 @@ Preview only (no remote changes):
 DRY_RUN=1 ./scripts/deploy.sh
 ```
 
-Defaults mirror the `nieder.me` deploy host/user and deploy to:
-- `DEPLOY_HOST=suckahs.org`
+Defaults mirror the current `nieder.me` deploy host/user and deploy to:
+- `DEPLOY_HOST=ssh.suckahs.org`
 - `DEPLOY_USER=suckahs`
-- `DEPLOY_PATH=/home/suckahs/public_html/sendmoi`
+- `DEPLOY_PATH=/home2/suckahs/public_html/sendmoi`
 - `DEPLOY_PORT=22`
 - `SITE_URL=https://send.moi`
 
 Override as needed, for example:
 
 ```bash
-DEPLOY_PATH=/home/suckahs/public_html/custom-sendmoi ./scripts/deploy.sh
+DEPLOY_PATH=/home2/suckahs/public_html/custom-sendmoi ./scripts/deploy.sh
 ```
 
 `deploy.sh` now stages a temporary deploy tree, updates canonical/social URLs there, and applies hash-based cache-bust query strings for `app-icon-light.png`, `app-icon-dark.png`, and `app-icon.png` without dirtying the working tree.

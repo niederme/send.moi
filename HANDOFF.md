@@ -105,7 +105,7 @@ Last updated: March 13, 2026
 - Added deploy scripts (based on `nieder.me` deploy flow, production-only):
   - `scripts/deploy.sh`
   - `scripts/set-site-url.sh`
-  - defaults: `suckahs.org` / `suckahs` / `/home/suckahs/public_html/sendmoi`
+  - defaults: `ssh.suckahs.org` / `suckahs` / `/home2/suckahs/public_html/sendmoi`
   - supports `DRY_RUN=1` preview mode
   - auto-updates canonical/social URLs and bumps icon cache-busting for `app-icon-light.png` and `app-icon-dark.png`
 - Video asset cleanup:

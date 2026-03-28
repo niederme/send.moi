@@ -7,7 +7,7 @@
     <title>SendMoi | Your inbox, in two taps</title>
     <meta
       name="description"
-      content="SendMoi sends links to Gmail as rich email cards, so they're easy to find and act on later."
+      content="Found something cool? SendMoi sends links to Gmail as rich email cards in two taps, so you can close the tab and find it later."
     />
     <link rel="canonical" href="https://send.moi/" />
     <link rel="icon" type="image/png" href="./assets/images/sendmoi/app-icon-light.png?v=20260312-1" />
@@ -19,7 +19,7 @@
     <meta property="og:title" content="SendMoi | Your inbox, in two taps" />
     <meta
       property="og:description"
-      content="SendMoi sends links to Gmail as rich email cards, so they're easy to find and act on later."
+      content="Found something cool? SendMoi sends links to Gmail as rich email cards in two taps, so you can close the tab and find it later."
     />
     <meta property="og:url" content="https://send.moi/" />
     <meta property="og:site_name" content="John Niedermeyer" />
@@ -34,7 +34,7 @@
     <meta name="twitter:title" content="SendMoi | Your inbox, in two taps" />
     <meta
       name="twitter:description"
-      content="SendMoi sends links to Gmail as rich email cards, so they're easy to find and act on later."
+      content="Found something cool? SendMoi sends links to Gmail as rich email cards in two taps, so you can close the tab and find it later."
     />
     <meta name="twitter:url" content="https://send.moi/" />
     <meta name="twitter:image" content="https://send.moi/assets/images/sendmoi/app-icon-light.png?v=20260312-1" />
@@ -349,11 +349,6 @@
       }
 
       .video-stage {
-        border: 1px solid var(--line-strong);
-        border-radius: 34px;
-        background: var(--card);
-        backdrop-filter: blur(18px);
-        box-shadow: var(--shadow-lg);
         width: min(100%, 520px);
         justify-self: end;
       }
@@ -364,9 +359,9 @@
         align-items: center;
         justify-content: center;
         min-height: clamp(540px, 56vw, 720px);
-        padding: clamp(22px, 3vw, 32px);
+        padding: clamp(6px, 1vw, 12px);
         overflow: hidden;
-        background: var(--video-background);
+        background: transparent;
       }
 
       .video-stage::before,
@@ -378,16 +373,16 @@
       }
 
       .video-stage::before {
+        inset: 12%;
         background:
-          radial-gradient(circle at 26% 28%, rgba(43, 127, 255, 0.22), transparent 26%),
-          radial-gradient(circle at 74% 68%, rgba(152, 16, 250, 0.2), transparent 28%);
-        filter: blur(14px);
-        opacity: 0.95;
+          radial-gradient(circle at 38% 24%, rgba(43, 127, 255, 0.16), transparent 30%),
+          radial-gradient(circle at 70% 72%, rgba(152, 16, 250, 0.16), transparent 32%);
+        filter: blur(22px);
+        opacity: 0.92;
       }
 
       .video-stage::after {
-        background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0));
-        opacity: 0.7;
+        display: none;
       }
 
       .device-shell {
@@ -557,6 +552,188 @@
       .feature-stack {
         display: grid;
         gap: 24px;
+      }
+
+      .how-it-works-module {
+        gap: 18px;
+      }
+
+      .how-it-works-header {
+        max-width: 56rem;
+      }
+
+      .questions-module {
+        gap: 18px;
+      }
+
+      .questions-header {
+        max-width: 54rem;
+      }
+
+      .question-grid {
+        gap: 18px;
+      }
+
+      .question-card {
+        gap: 10px;
+        align-content: start;
+      }
+
+      .question-kicker {
+        margin: 0;
+        color: var(--blue);
+        font-size: 12px;
+        line-height: 1;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .question-card h3 {
+        margin: 0;
+        color: var(--ink);
+        font-size: clamp(22px, 2.1vw, 28px);
+        line-height: 1.12;
+        font-weight: 700;
+        letter-spacing: -0.03em;
+        text-wrap: balance;
+      }
+
+      .question-card p:last-child {
+        max-width: 34ch;
+      }
+
+      .how-it-works-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .how-step-card {
+        gap: 14px;
+        min-width: 0;
+      }
+
+      .how-step-head {
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr);
+        gap: 12px;
+        align-items: center;
+      }
+
+      .how-step-number {
+        display: grid;
+        place-items: center;
+        width: 32px;
+        height: 32px;
+        border-radius: 999px;
+        background: linear-gradient(135deg, var(--blue), var(--violet));
+        color: #f8fbff;
+        font-size: 13px;
+        line-height: 1;
+        font-weight: 700;
+        box-shadow: 0 10px 20px rgba(43, 127, 255, 0.18);
+      }
+
+      .how-step-title {
+        margin: 0;
+        color: var(--ink);
+        font-size: clamp(20px, 1.7vw, 24px);
+        line-height: 1.12;
+        font-weight: 700;
+        letter-spacing: -0.025em;
+        text-wrap: balance;
+      }
+
+      .how-step-copy {
+        margin: 0;
+        color: var(--muted);
+        font-size: 15px;
+        line-height: 1.45;
+        font-weight: 300;
+        text-wrap: pretty;
+      }
+
+      .how-step-media {
+        min-height: 214px;
+        background:
+          radial-gradient(circle at 24% 18%, rgba(43, 127, 255, 0.16), transparent 28%),
+          radial-gradient(circle at 76% 84%, rgba(152, 16, 250, 0.14), transparent 28%),
+          rgba(255, 255, 255, 0.04);
+      }
+
+      .how-step-media .feature-image {
+        object-fit: contain;
+        object-position: center;
+      }
+
+      .how-step-media--share {
+        padding: 10px;
+      }
+
+      .how-step-media--share .feature-image {
+        border-radius: 14px;
+      }
+
+      .how-step-media--email {
+        padding: 12px;
+      }
+
+      .how-step-media--email .feature-image {
+        border-radius: 16px;
+      }
+
+      .tab-stack {
+        position: relative;
+        height: 100%;
+        min-height: 214px;
+        padding: 20px;
+      }
+
+      .tab-card {
+        position: absolute;
+        left: 20px;
+        right: 20px;
+        display: grid;
+        gap: 4px;
+        padding: 14px 16px;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background:
+          linear-gradient(180deg, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0.08)),
+          var(--card-solid);
+        box-shadow: var(--shadow-md);
+      }
+
+      .tab-card span {
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 1.2;
+        font-weight: 400;
+      }
+
+      .tab-card strong {
+        color: var(--ink);
+        font-size: 16px;
+        line-height: 1.2;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+      }
+
+      .tab-card--back {
+        top: 54px;
+        transform: rotate(-5deg);
+        opacity: 0.62;
+      }
+
+      .tab-card--mid {
+        top: 32px;
+        transform: rotate(2deg);
+        opacity: 0.82;
+      }
+
+      .tab-card--front {
+        top: 76px;
       }
 
       .feature-module {
@@ -1151,6 +1328,10 @@
           grid-template-columns: 1fr;
         }
 
+        .how-it-works-grid {
+          grid-template-columns: 1fr;
+        }
+
         .feature-item--full {
           grid-template-columns: 1fr;
         }
@@ -1302,6 +1483,15 @@
 
         .hero-download {
           margin-top: 22px;
+        }
+
+        .how-it-works-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .how-step-media,
+        .tab-stack {
+          min-height: 180px;
         }
 
         .hero-download .store-actions--coming-soon {
@@ -1523,155 +1713,117 @@
         </section>
       </section>
 
-      <section class="value-strip" aria-label="SendMoi features">
+      <section class="value-strip" aria-labelledby="workflow-title">
         <div class="feature-stack">
-          <div class="feature-grid feature-grid--top">
-            <article class="feature-module" aria-labelledby="setup-title">
-              <header class="feature-module-header">
-                <p class="eyebrow">Share setup</p>
-                <h3 class="feature-module-title" id="setup-title">Set up SendMoi in the Share Sheet</h3>
-                <p class="feature-module-subtitle">Do this once, and SendMoi is always available when you share a link.</p>
-              </header>
-              <div class="feature-carousel" data-share-carousel>
-                <article class="feature-carousel-slide is-active" data-share-slide>
-                  <div class="feature-media">
-                    <img
-                      class="feature-image"
-                      src="./assets/images/sendmoi/features/share-setup-step-1.png"
-                      alt="iOS share sheet showing the More app option highlighted."
-                      loading="lazy"
-                      decoding="async"
-                    />
-                  </div>
-                  <h4>1. Open Share and tap More</h4>
-                  <p>From the first app row in the share sheet, open More to edit your app list.</p>
-                </article>
-                <article class="feature-carousel-slide" data-share-slide hidden>
-                  <div class="feature-media">
-                    <img
-                      class="feature-image"
-                      src="./assets/images/sendmoi/features/share-setup-step-2.png"
-                      alt="iOS Apps list with SendMoi plus button and toggle highlighted."
-                      loading="lazy"
-                      decoding="async"
-                    />
-                  </div>
-                  <h4>2. Add SendMoi to Favorites</h4>
-                  <p>Tap the green plus next to SendMoi so it appears in Favorites.</p>
-                </article>
-                <article class="feature-carousel-slide" data-share-slide hidden>
-                  <div class="feature-media">
-                    <img
-                      class="feature-image"
-                      src="./assets/images/sendmoi/features/share-setup-step-3.png"
-                      alt="iOS Apps list with SendMoi in Favorites and toggle enabled."
-                      loading="lazy"
-                      decoding="async"
-                    />
-                  </div>
-                  <h4>3. Keep SendMoi enabled</h4>
-                  <p>Make sure SendMoi stays toggled on, then tap Done.</p>
-                </article>
-                <div class="feature-carousel-nav">
-                  <button class="feature-carousel-btn" type="button" data-share-prev aria-label="Show previous setup step">Prev</button>
-                  <div class="feature-carousel-dots" role="tablist" aria-label="Share setup steps">
-                    <button class="feature-carousel-dot is-active" type="button" data-share-dot="0" role="tab" aria-selected="true" aria-label="Show setup step 1"></button>
-                    <button class="feature-carousel-dot" type="button" data-share-dot="1" role="tab" aria-selected="false" aria-label="Show setup step 2"></button>
-                    <button class="feature-carousel-dot" type="button" data-share-dot="2" role="tab" aria-selected="false" aria-label="Show setup step 3"></button>
-                  </div>
-                  <button class="feature-carousel-btn" type="button" data-share-next aria-label="Show next setup step">Next</button>
-                </div>
-              </div>
-            </article>
-
-            <article class="feature-item">
-              <div class="feature-media">
-                <img
-                  class="feature-image feature-image--light"
-                  src="./assets/images/sendmoi/features/02-Light.png"
-                  alt="SendMoi app controls inside iOS sharing settings."
-                  loading="lazy"
-                  decoding="async"
-                />
-                <img
-                  class="feature-image feature-image--dark"
-                  src="./assets/images/sendmoi/features/02-Dark.png"
-                  alt="SendMoi app controls inside iOS sharing settings."
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
-              <h3>Your Gmail, kept private</h3>
-              <p>SendMoi uses your own Gmail account and stays local-first, with no backend storing your session, recipients, or queued sends.</p>
-            </article>
-          </div>
-
-          <article class="feature-item feature-item--readable">
-            <header class="feature-item-header">
-              <p class="eyebrow">Readable</p>
-              <h3 class="feature-module-title">Readable when it lands</h3>
-              <p class="feature-module-subtitle">The result is easy to scan: a clean subject, useful context, and a source link that still feels good on both phone and desktop.</p>
+          <article class="feature-module how-it-works-module" aria-labelledby="workflow-title">
+            <header class="feature-module-header how-it-works-header">
+              <p class="eyebrow">How it works</p>
+              <h2 class="feature-module-title" id="workflow-title">Save it now. Find it later.</h2>
+              <p class="feature-module-subtitle">Once SendMoi is in your Share Sheet, this is the whole flow.</p>
             </header>
-            <div class="feature-media">
-              <img
-                class="feature-image feature-image--light"
-                src="./assets/images/sendmoi/features/03-Light.png"
-                alt="SendMoi formatted email preview."
-                loading="lazy"
-                decoding="async"
-              />
-              <img
-                class="feature-image feature-image--dark"
-                src="./assets/images/sendmoi/features/03-Dark.png"
-                alt="SendMoi formatted email preview."
-                loading="lazy"
-                decoding="async"
-              />
+
+            <div class="how-it-works-grid">
+              <article class="feature-item how-step-card">
+                <div class="how-step-head">
+                  <span class="how-step-number" aria-hidden="true">1</span>
+                  <h3 class="how-step-title">Found something you want to come back to.</h3>
+                </div>
+                <div class="feature-media how-step-media">
+                  <div class="tab-stack" aria-hidden="true">
+                    <div class="tab-card tab-card--back">
+                      <span>Article</span>
+                      <strong>Read this later</strong>
+                    </div>
+                    <div class="tab-card tab-card--mid">
+                      <span>Recipe</span>
+                      <strong>Make this this weekend</strong>
+                    </div>
+                    <div class="tab-card tab-card--front">
+                      <span>Place</span>
+                      <strong>Try this spot</strong>
+                    </div>
+                  </div>
+                </div>
+                <p class="how-step-copy">Send it now instead of leaving one more tab open.</p>
+              </article>
+
+              <article class="feature-item how-step-card">
+                <div class="how-step-head">
+                  <span class="how-step-number" aria-hidden="true">2</span>
+                  <h3 class="how-step-title">Two taps send it to Gmail.</h3>
+                </div>
+                <div class="feature-media how-step-media how-step-media--share">
+                  <img
+                    class="feature-image"
+                    src="./assets/images/sendmoi/features/share-setup-step-1.png"
+                    alt="iPhone share sheet with SendMoi ready to be used."
+                    decoding="async"
+                  />
+                </div>
+                <p class="how-step-copy">Tap Share, tap SendMoi, and your own Gmail account does the rest.</p>
+              </article>
+
+              <article class="feature-item how-step-card">
+                <div class="how-step-head">
+                  <span class="how-step-number" aria-hidden="true">3</span>
+                  <h3 class="how-step-title">Done.</h3>
+                </div>
+                <div class="feature-media how-step-media how-step-media--email">
+                  <img
+                    class="feature-image feature-image--light"
+                    src="./assets/images/sendmoi/features/03-Light.png"
+                    alt="Rich Gmail card created by SendMoi."
+                    decoding="async"
+                  />
+                  <img
+                    class="feature-image feature-image--dark"
+                    src="./assets/images/sendmoi/features/03-Dark.png"
+                    alt="Rich Gmail card created by SendMoi."
+                    decoding="async"
+                  />
+                </div>
+                <p class="how-step-copy">It lands as a clean email card that's easy to find later on any device.</p>
+              </article>
             </div>
           </article>
+        </div>
+      </section>
 
-          <div class="feature-grid">
-            <article class="feature-item">
-              <div class="feature-media">
-                <img
-                  class="feature-image feature-image--light"
-                  src="./assets/images/sendmoi/features/04-Light.png"
-                  alt="SendMoi offline queue marketing image"
-                  loading="lazy"
-                  decoding="async"
-                />
-                <img
-                  class="feature-image feature-image--dark"
-                  src="./assets/images/sendmoi/features/04-Dark.png"
-                  alt="SendMoi offline queue marketing image"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
-              <h3>Offline queue</h3>
-              <p>If the network is flaky, the send is not dropped. SendMoi keeps it in a local queue and retries when the app wakes up or connectivity returns.</p>
-            </article>
-            <article class="feature-item">
-              <div class="feature-media">
-                <img
-                  class="feature-image feature-image--light"
-                  src="./assets/images/sendmoi/features/05-Light.png"
-                  alt="SendMoi recent recipients marketing image"
-                  loading="lazy"
-                  decoding="async"
-                />
-                <img
-                  class="feature-image feature-image--dark"
-                  src="./assets/images/sendmoi/features/05-Dark.png"
-                  alt="SendMoi recent recipients marketing image"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
-              <h3>Recent recipients</h3>
-              <p>Keep a default recipient ready, then switch fast with recent-recipient shortcuts when something needs to go somewhere else.</p>
-            </article>
-          </div>
+      <section class="value-strip" aria-labelledby="questions-title">
+        <div class="feature-stack">
+          <article class="feature-module questions-module" aria-labelledby="questions-title">
+            <header class="feature-module-header questions-header">
+              <p class="eyebrow">Questions people have</p>
+              <h2 class="feature-module-title" id="questions-title">Private by default. Simple to use.</h2>
+              <p class="feature-module-subtitle">If you're wondering what account it uses, what it needs, or what it keeps, here's the short version.</p>
+            </header>
+
+            <div class="feature-grid question-grid">
+              <article class="feature-item question-card">
+                <p class="question-kicker">Account</p>
+                <h3>Does it use my Gmail account?</h3>
+                <p>Yes. SendMoi sends through your own Gmail account, not a SendMoi inbox or forwarding service.</p>
+              </article>
+
+              <article class="feature-item question-card">
+                <p class="question-kicker">Privacy</p>
+                <h3>What does SendMoi store?</h3>
+                <p>SendMoi is local-first. It does not use a backend to store your Gmail session, recipients, or queued sends.</p>
+              </article>
+
+              <article class="feature-item question-card">
+                <p class="question-kicker">Requirements</p>
+                <h3>What do I need to use it?</h3>
+                <p>You need an iPhone or iPad, a Gmail account, and one quick setup step to add SendMoi to the Share Sheet.</p>
+              </article>
+
+              <article class="feature-item question-card">
+                <p class="question-kicker">Sending</p>
+                <h3>Do I need to be online when I share?</h3>
+                <p>If you share while offline, SendMoi can queue the send locally and retry later when your device is back online.</p>
+              </article>
+            </div>
+          </article>
         </div>
       </section>
 
@@ -1864,59 +2016,6 @@
           });
         }
 
-        const shareCarousel = document.querySelector("[data-share-carousel]");
-
-        if (shareCarousel) {
-          const slides = Array.from(shareCarousel.querySelectorAll("[data-share-slide]"));
-          const dots = Array.from(shareCarousel.querySelectorAll("[data-share-dot]"));
-          const prevButton = shareCarousel.querySelector("[data-share-prev]");
-          const nextButton = shareCarousel.querySelector("[data-share-next]");
-          let activeIndex = slides.findIndex((slide) => slide.classList.contains("is-active"));
-
-          if (activeIndex < 0) {
-            activeIndex = 0;
-          }
-
-          const setSlide = (nextIndex) => {
-            if (!slides.length) {
-              return;
-            }
-
-            activeIndex = (nextIndex + slides.length) % slides.length;
-
-            slides.forEach((slide, index) => {
-              const isActive = index === activeIndex;
-              slide.classList.toggle("is-active", isActive);
-              slide.hidden = !isActive;
-            });
-
-            dots.forEach((dot, index) => {
-              const isActive = index === activeIndex;
-              dot.classList.toggle("is-active", isActive);
-              dot.setAttribute("aria-selected", isActive ? "true" : "false");
-            });
-          };
-
-          if (prevButton) {
-            prevButton.addEventListener("click", () => {
-              setSlide(activeIndex - 1);
-            });
-          }
-
-          if (nextButton) {
-            nextButton.addEventListener("click", () => {
-              setSlide(activeIndex + 1);
-            });
-          }
-
-          dots.forEach((dot, index) => {
-            dot.addEventListener("click", () => {
-              setSlide(index);
-            });
-          });
-
-          setSlide(activeIndex);
-        }
       })();
     </script>
   </body>

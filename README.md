@@ -15,6 +15,10 @@ Marketing site for SendMoi.
 
 ## UI notes
 
+- The homepage now puts the everyday usage flow front and center:
+  - the topper stays close to the legacy structure: brand, headline, subheadline, store badges, and video demo
+  - the section below is now a single full-width `How it works` module with a 3-step save-for-later flow
+  - a second reassurance section now answers likely first-visit questions about privacy, account usage, requirements, and sending behavior
 - On narrow mobile viewports, the `Coming soon` App Store annotation is constrained to the card edge to avoid horizontal side-scroll.
 - The landing-page hero now collapses to a stacked layout earlier at mid-width breakpoints so the demo video can stay centered and effectively full-width.
 - Marketing icon assets now ship as theme variants:

@@ -1,18 +1,24 @@
 # SendMoi Marketing Handoff
 
-Last updated: March 13, 2026
+Last updated: March 21, 2026
 
 ## Branch
 
-- `codex/cache-bust-hotfix`
+- `codex/flow-front-and-center`
 
 ## Current focus
 
-- Refresh app icon cache-busting references across the public site pages
+- Reposition the homepage so the primary story is the 3-step "save it for later" flow
 - Keep the standalone `send.moi` marketing site documentation accurate for the active branch
 
 ## What changed
 
+- Repositioned the homepage around the everyday save-for-later flow:
+  - restored the top of the page to the preferred legacy order: brand, headline, subheadline, store badges, and demo video
+  - moved `How it works` out of the hero and into a single full-width module below the fold
+  - simplified that module to a shorter 3-step horizontal story with lightweight visuals
+  - replaced the removed lower feature stack with a concise reassurance section covering likely questions about privacy, account usage, requirements, and offline sending
+  - updated homepage `description`, `og:description`, and `twitter:description` to mention closing tabs and finding the link later
 - Bumped app icon cache-busting query strings from `v=20260310-1` to `v=20260312-1` across homepage and child pages:
   - updated favicon / apple-touch-icon references in `/`, `/privacy/`, `/terms/`, and `/accessibility/`
   - updated homepage social preview image references (`og:image`, `og:image:secure_url`, `twitter:image`)
@@ -138,7 +144,7 @@ Last updated: March 13, 2026
 ## Resume checklist
 
 1. `git fetch --all`
-2. `git checkout codex/cache-bust-hotfix`
+2. `git checkout codex/flow-front-and-center`
 3. `git pull --ff-only`
 4. `make`
 5. Validate `/`, `/privacy/`, `/terms/`, `/accessibility/` in browser

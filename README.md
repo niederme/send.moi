@@ -88,7 +88,12 @@ That binds to localhost only.
 
 ## Deploy
 
-Run:
+Merging to `main` triggers the GitHub Actions deploy workflow automatically. The workflow:
+
+- loads the dedicated deploy key from the `SSH_PRIVATE_KEY` GitHub secret
+- runs the deploy verifiers before syncing the managed site files to the server over SSH
+
+For manual or local deploys, use the shell script directly:
 
 ```bash
 ./scripts/deploy.sh
@@ -106,6 +111,7 @@ Defaults mirror the current `nieder.me` deploy host/user and deploy to:
 - `DEPLOY_PATH=/home2/suckahs/public_html/sendmoi`
 - `DEPLOY_PORT=22`
 - `SITE_URL=https://send.moi`
+- `DEPLOY_IDENTITY_FILE` optional override for the SSH key path
 
 Override as needed, for example:
 
@@ -113,4 +119,4 @@ Override as needed, for example:
 DEPLOY_PATH=/home2/suckahs/public_html/custom-sendmoi ./scripts/deploy.sh
 ```
 
-`deploy.sh` now stages a temporary deploy tree, updates canonical/social URLs there, and applies hash-based cache-bust query strings for `app-icon-light.png`, `app-icon-dark.png`, and `app-icon.png` without dirtying the working tree.
+`deploy.sh` stages a temporary deploy tree, updates canonical/social URLs there, applies hash-based cache-bust query strings for `app-icon-light.png`, `app-icon-dark.png`, and `app-icon.png`, and prefers `~/.ssh/send_moi_deploy` automatically when present. GitHub Actions wiring is checked by `scripts/check-github-deploy.py`.

@@ -18,6 +18,7 @@ DEPLOY_PATH="${DEPLOY_PATH:-/home2/suckahs/public_html/sendmoi}"
 DEPLOY_PORT="${DEPLOY_PORT:-22}"
 DRY_RUN="${DRY_RUN:-0}"
 SITE_URL="${SITE_URL:-https://send.moi}"
+DEPLOY_IDENTITY_FILE="${DEPLOY_IDENTITY_FILE:-}"
 
 RSYNC_ARGS=(
   -avz
@@ -67,13 +68,28 @@ perl -0pi -e "s#<meta name=\"twitter:image\" content=\"[^\"]*\" />#<meta name=\"
 echo "Using staged asset cache-bust versions: app-icon-light.png?v=${light_cache_bust}, app-icon-dark.png?v=${dark_cache_bust}, app-icon.png?v=${fallback_cache_bust}"
 
 REMOTE="${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_PATH%/}/"
+SSH_CMD=(
+  ssh
+  -p "$DEPLOY_PORT"
+  -o IdentitiesOnly=yes
+  -o StrictHostKeyChecking=yes
+)
+
+if [[ -n "$DEPLOY_IDENTITY_FILE" ]]; then
+  SSH_CMD+=(-i "$DEPLOY_IDENTITY_FILE")
+elif [[ -f "${HOME}/.ssh/send_moi_deploy" ]]; then
+  SSH_CMD+=(-i "${HOME}/.ssh/send_moi_deploy")
+fi
+
+printf -v RSYNC_SSH_CMD '%q ' "${SSH_CMD[@]}"
+RSYNC_SSH_CMD="${RSYNC_SSH_CMD% }"
 
 # Ensure remote target exists.
-ssh -p "$DEPLOY_PORT" "${DEPLOY_USER}@${DEPLOY_HOST}" "mkdir -p '${DEPLOY_PATH%/}'"
+"${SSH_CMD[@]}" "${DEPLOY_USER}@${DEPLOY_HOST}" "mkdir -p '${DEPLOY_PATH%/}'"
 
 # Sync only the managed site paths from staging so deploy does not mutate
 # the working tree or depend on checked-in cache-bust versions.
-rsync "${RSYNC_ARGS[@]}" -e "ssh -p $DEPLOY_PORT" \
+rsync "${RSYNC_ARGS[@]}" -e "$RSYNC_SSH_CMD" \
   "$STAGING_DIR/index.html" \
   "$STAGING_DIR/privacy" \
   "$STAGING_DIR/terms" \

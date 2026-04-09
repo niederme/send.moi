@@ -562,45 +562,103 @@
         max-width: 56rem;
       }
 
-      .questions-module {
-        gap: 18px;
+      .faq-module {
+        gap: 0;
+        padding: 0;
+        overflow: hidden;
       }
 
-      .questions-header {
+      .faq-header {
         max-width: 54rem;
-      }
-
-      .question-grid {
-        gap: 18px;
-      }
-
-      .question-card {
-        gap: 10px;
-        align-content: start;
-      }
-
-      .question-kicker {
+        padding: 22px 22px 18px;
         margin: 0;
-        color: var(--blue);
-        font-size: 12px;
+        gap: 8px;
+      }
+
+      .faq-header .eyebrow {
+        margin: 0;
+        font-size: 15px;
         line-height: 1;
-        font-weight: 700;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
+        letter-spacing: 0.12em;
       }
 
-      .question-card h3 {
-        margin: 0;
+      .faq-list {
+        display: grid;
+        border-top: 1px solid var(--line);
+      }
+
+      .faq-item + .faq-item {
+        border-top: 1px solid var(--line);
+      }
+
+      .faq-question {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 16px;
+        align-items: center;
+        padding: 17px 22px;
+        cursor: pointer;
+        list-style: none;
         color: var(--ink);
-        font-size: clamp(22px, 2.1vw, 28px);
+        font-size: clamp(20px, 1.75vw, 25px);
         line-height: 1.12;
         font-weight: 700;
-        letter-spacing: -0.03em;
+        letter-spacing: -0.028em;
         text-wrap: balance;
       }
 
-      .question-card p:last-child {
-        max-width: 34ch;
+      .faq-question::-webkit-details-marker {
+        display: none;
+      }
+
+      .faq-question:hover,
+      .faq-question:focus-visible {
+        outline: none;
+      }
+
+      .faq-icon {
+        display: grid;
+        place-items: center;
+        width: 26px;
+        height: 26px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: var(--card-solid);
+        color: var(--blue);
+        font-size: 18px;
+        line-height: 1;
+        font-weight: 300;
+        transition:
+          transform 0.2s ease,
+          border-color 0.2s ease,
+          color 0.2s ease;
+      }
+
+      .faq-item[open] .faq-icon {
+        transform: rotate(45deg);
+        border-color: var(--line-strong);
+        color: var(--ink);
+      }
+
+      .faq-answer {
+        padding: 0 22px 18px;
+        max-width: 46rem;
+        color: var(--muted);
+        font-size: clamp(16px, 1.18vw, 18px);
+        line-height: 1.58;
+        font-weight: 300;
+        text-wrap: pretty;
+      }
+
+      .faq-answer p {
+        margin: 0;
+      }
+
+      .faq-answer a {
+        color: var(--ink);
+        text-decoration: underline;
+        text-underline-offset: 0.16em;
+        text-decoration-color: rgba(43, 127, 255, 0.45);
       }
 
       .how-it-works-grid {
@@ -1649,7 +1707,7 @@
 
           <div class="hero-copy">
             <p>
-              SendMoi sends links to Gmail as rich email cards, so they're easy to find and act on later.
+              SendMoi sends links to Gmail as rich email cards, so they’re easy to find and act on later.
             </p>
           </div>
 
@@ -1713,115 +1771,85 @@
         </section>
       </section>
 
-      <section class="value-strip" aria-labelledby="workflow-title">
+      <section class="value-strip" aria-labelledby="faq-title">
         <div class="feature-stack">
-          <article class="feature-module how-it-works-module" aria-labelledby="workflow-title">
-            <header class="feature-module-header how-it-works-header">
-              <p class="eyebrow">How it works</p>
-              <h2 class="feature-module-title" id="workflow-title">Save it now. Find it later.</h2>
-              <p class="feature-module-subtitle">Once SendMoi is in your Share Sheet, this is the whole flow.</p>
+          <article class="feature-module faq-module" aria-labelledby="faq-title">
+            <header class="feature-module-header faq-header">
+              <p class="eyebrow">FAQ</p>
+              <h2 class="feature-module-title" id="faq-title">Questions?</h2>
+              <p class="feature-module-subtitle">How it works, how to get started, and what happens when you’re offline.</p>
             </header>
 
-            <div class="how-it-works-grid">
-              <article class="feature-item how-step-card">
-                <div class="how-step-head">
-                  <span class="how-step-number" aria-hidden="true">1</span>
-                  <h3 class="how-step-title">Found something you want to come back to.</h3>
+            <div class="faq-list">
+              <details class="faq-item" open>
+                <summary class="faq-question">
+                  <span>What does SendMoi actually do?</span>
+                  <span class="faq-icon" aria-hidden="true">+</span>
+                </summary>
+                <div class="faq-answer">
+                  <p>SendMoi lets you send links, posts, notes, and photos to yourself in two taps. Instead of leaving tabs open, losing things in bookmarks, or texting yourself a link you’ll forget about, it saves what you shared as a polished email in Gmail with the title, preview, link, and context still attached, so it is easy to find and useful when you come back to it later.</p>
                 </div>
-                <div class="feature-media how-step-media">
-                  <div class="tab-stack" aria-hidden="true">
-                    <div class="tab-card tab-card--back">
-                      <span>Article</span>
-                      <strong>Read this later</strong>
-                    </div>
-                    <div class="tab-card tab-card--mid">
-                      <span>Recipe</span>
-                      <strong>Make this this weekend</strong>
-                    </div>
-                    <div class="tab-card tab-card--front">
-                      <span>Place</span>
-                      <strong>Try this spot</strong>
-                    </div>
-                  </div>
+              </details>
+
+              <details class="faq-item">
+                <summary class="faq-question">
+                  <span>Does it send from my Gmail account?</span>
+                  <span class="faq-icon" aria-hidden="true">+</span>
+                </summary>
+                <div class="faq-answer">
+                  <p>Yes. SendMoi sends through your own Gmail account, so the message comes from an address you already use instead of a separate SendMoi inbox or forwarding service.</p>
                 </div>
-                <p class="how-step-copy">Send it now instead of leaving one more tab open.</p>
-              </article>
+              </details>
 
-              <article class="feature-item how-step-card">
-                <div class="how-step-head">
-                  <span class="how-step-number" aria-hidden="true">2</span>
-                  <h3 class="how-step-title">Two taps send it to Gmail.</h3>
+              <details class="faq-item">
+                <summary class="faq-question">
+                  <span>What do I need to get started?</span>
+                  <span class="faq-icon" aria-hidden="true">+</span>
+                </summary>
+                <div class="faq-answer">
+                  <p>You need a Gmail account and an iPhone, iPad, or Mac where you can add SendMoi to the Share Sheet. Setup takes about a minute, and after that the flow is just tap Share, tap SendMoi.</p>
                 </div>
-                <div class="feature-media how-step-media how-step-media--share">
-                  <img
-                    class="feature-image"
-                    src="./assets/images/sendmoi/features/share-setup-step-1.png"
-                    alt="iPhone share sheet with SendMoi ready to be used."
-                    decoding="async"
-                  />
+              </details>
+
+              <details class="faq-item">
+                <summary class="faq-question">
+                  <span>Can I check it before it sends?</span>
+                  <span class="faq-icon" aria-hidden="true">+</span>
+                </summary>
+                <div class="faq-answer">
+                  <p>Yes. If Auto-send is off, SendMoi keeps the draft open in the Share Sheet so you can review it, edit the title or notes, and change the recipient before it goes out.</p>
                 </div>
-                <p class="how-step-copy">Tap Share, tap SendMoi, and your own Gmail account does the rest.</p>
-              </article>
+              </details>
 
-              <article class="feature-item how-step-card">
-                <div class="how-step-head">
-                  <span class="how-step-number" aria-hidden="true">3</span>
-                  <h3 class="how-step-title">Done.</h3>
+              <details class="faq-item">
+                <summary class="faq-question">
+                  <span>What if I save something while I’m offline?</span>
+                  <span class="faq-icon" aria-hidden="true">+</span>
+                </summary>
+                <div class="faq-answer">
+                  <p>If Gmail or the network is unavailable, SendMoi queues the send locally and retries later. The thing you wanted to save does not disappear just because you were in a tunnel, on a plane, or in a bad-signal moment.</p>
                 </div>
-                <div class="feature-media how-step-media how-step-media--email">
-                  <img
-                    class="feature-image feature-image--light"
-                    src="./assets/images/sendmoi/features/03-Light.png"
-                    alt="Rich Gmail card created by SendMoi."
-                    decoding="async"
-                  />
-                  <img
-                    class="feature-image feature-image--dark"
-                    src="./assets/images/sendmoi/features/03-Dark.png"
-                    alt="Rich Gmail card created by SendMoi."
-                    decoding="async"
-                  />
+              </details>
+
+              <details class="faq-item">
+                <summary class="faq-question">
+                  <span>Does any of this live on SendMoi servers?</span>
+                  <span class="faq-icon" aria-hidden="true">+</span>
+                </summary>
+                <div class="faq-answer">
+                  <p>No. SendMoi is local-first and does not use a backend to store your Gmail session, saved recipients, or queued sends. The flow stays tied to your device and your own Gmail account.</p>
                 </div>
-                <p class="how-step-copy">It lands as a clean email card that's easy to find later on any device.</p>
-              </article>
-            </div>
-          </article>
-        </div>
-      </section>
+              </details>
 
-      <section class="value-strip" aria-labelledby="questions-title">
-        <div class="feature-stack">
-          <article class="feature-module questions-module" aria-labelledby="questions-title">
-            <header class="feature-module-header questions-header">
-              <p class="eyebrow">Questions people have</p>
-              <h2 class="feature-module-title" id="questions-title">Private by default. Simple to use.</h2>
-              <p class="feature-module-subtitle">If you're wondering what account it uses, what it needs, or what it keeps, here's the short version.</p>
-            </header>
-
-            <div class="feature-grid question-grid">
-              <article class="feature-item question-card">
-                <p class="question-kicker">Account</p>
-                <h3>Does it use my Gmail account?</h3>
-                <p>Yes. SendMoi sends through your own Gmail account, not a SendMoi inbox or forwarding service.</p>
-              </article>
-
-              <article class="feature-item question-card">
-                <p class="question-kicker">Privacy</p>
-                <h3>What does SendMoi store?</h3>
-                <p>SendMoi is local-first. It does not use a backend to store your Gmail session, recipients, or queued sends.</p>
-              </article>
-
-              <article class="feature-item question-card">
-                <p class="question-kicker">Requirements</p>
-                <h3>What do I need to use it?</h3>
-                <p>You need an iPhone or iPad, a Gmail account, and one quick setup step to add SendMoi to the Share Sheet.</p>
-              </article>
-
-              <article class="feature-item question-card">
-                <p class="question-kicker">Sending</p>
-                <h3>Do I need to be online when I share?</h3>
-                <p>If you share while offline, SendMoi can queue the send locally and retry later when your device is back online.</p>
-              </article>
+              <details class="faq-item">
+                <summary class="faq-question">
+                  <span>Need help?</span>
+                  <span class="faq-icon" aria-hidden="true">+</span>
+                </summary>
+                <div class="faq-answer">
+                  <p>Email <a href="mailto:&#104;&#101;&#108;&#112;&#64;&#115;&#101;&#110;&#100;&#46;&#109;&#111;&#105;">&#104;&#101;&#108;&#112;&#64;&#115;&#101;&#110;&#100;&#46;&#109;&#111;&#105;</a> and we’ll get back to you.</p>
+                </div>
+              </details>
             </div>
           </article>
         </div>
@@ -1864,9 +1892,6 @@
         <div class="footer-meta">
           <p>
             <a href="https://nieder.me/">&copy; John Niedermeyer</a>
-            <span aria-hidden="true"> | </span>
-            Need help? Email
-            <a href="mailto:&#104;&#101;&#108;&#112;&#64;&#115;&#101;&#110;&#100;&#46;&#109;&#111;&#105;">&#104;&#101;&#108;&#112;&#64;&#115;&#101;&#110;&#100;&#46;&#109;&#111;&#105;</a>
           </p>
         </div>
         <div class="footer-links">

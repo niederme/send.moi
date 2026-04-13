@@ -1,8 +1,14 @@
 # send.moi
 
-Marketing site for SendMoi.
+Archived repository.
 
-## Routes
+The active SendMoi marketing/docs site now lives in `sendmoi/docs`.
+
+Do not make new changes or deploy from this repository.
+
+This repo is kept only as historical context for the retired standalone `send.moi` site.
+
+## Former routes
 
 - `/` marketing landing page
 - `/privacy/` privacy policy
@@ -13,7 +19,7 @@ Marketing site for SendMoi.
 
 - Footer and policy pages use `help@send.moi`
 
-## UI notes
+## Historical UI notes
 
 - The homepage now puts the everyday usage flow front and center:
   - the topper stays close to the legacy structure: brand, headline, subheadline, store badges, and video demo
@@ -39,6 +45,8 @@ Marketing site for SendMoi.
   - `assets/images/sendmoi/features/05-{Light,Dark}.png`
 
 ## Local dev
+
+Local development in this repo is no longer the source of truth. Use the `sendmoi` repo for active work.
 
 Run this from the repo root:
 
@@ -88,35 +96,4 @@ That binds to localhost only.
 
 ## Deploy
 
-Merging to `main` triggers the GitHub Actions deploy workflow automatically. The workflow:
-
-- loads the dedicated deploy key from the `SSH_PRIVATE_KEY` GitHub secret
-- runs the deploy verifiers before syncing the managed site files to the server over SSH
-
-For manual or local deploys, use the shell script directly:
-
-```bash
-./scripts/deploy.sh
-```
-
-Preview only (no remote changes):
-
-```bash
-DRY_RUN=1 ./scripts/deploy.sh
-```
-
-Defaults mirror the current `nieder.me` deploy host/user and deploy to:
-- `DEPLOY_HOST=ssh.suckahs.org`
-- `DEPLOY_USER=suckahs`
-- `DEPLOY_PATH=/home2/suckahs/public_html/sendmoi`
-- `DEPLOY_PORT=22`
-- `SITE_URL=https://send.moi`
-- `DEPLOY_IDENTITY_FILE` optional override for the SSH key path
-
-Override as needed, for example:
-
-```bash
-DEPLOY_PATH=/home2/suckahs/public_html/custom-sendmoi ./scripts/deploy.sh
-```
-
-`deploy.sh` stages a temporary deploy tree, updates canonical/social URLs there, applies hash-based cache-bust query strings for `app-icon-light.png`, `app-icon-dark.png`, and `app-icon.png`, and prefers `~/.ssh/send_moi_deploy` automatically when present. GitHub Actions wiring is checked by `scripts/check-github-deploy.py`.
+Deployments from this repo are intentionally disabled. Deploy from `sendmoi/docs` instead.

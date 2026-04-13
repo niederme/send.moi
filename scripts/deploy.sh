@@ -1,6 +1,21 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+ALLOW_RETIRED_DEPLOY="${ALLOW_RETIRED_DEPLOY:-0}"
+
+if [[ "$ALLOW_RETIRED_DEPLOY" != "1" ]]; then
+  cat >&2 <<'EOF'
+This repository is decommissioned.
+
+The active SendMoi marketing/docs site now lives in `sendmoi/docs`.
+Deploy from the `sendmoi` repository instead of `send.moi`.
+
+If you intentionally need a one-off historical deploy from this retired repo,
+rerun with `ALLOW_RETIRED_DEPLOY=1`.
+EOF
+  exit 1
+fi
+
 # Deploy static site files over SSH + rsync.
 # Defaults can be overridden via env vars:
 #   DEPLOY_HOST
